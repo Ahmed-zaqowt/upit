@@ -3,13 +3,13 @@
 @section('content')
     <!-- start solution header  -->
     <section id="solution-header" class="d-flex align-items-center justify-content-center"
-        style="background: url({{ asset('front_assets/images/data-center-pic-2-2048x967.jpg') }}) no-repeat center center;">
-        <div class="overlay" style="background: url(images/sm_dot_b.png') }}) ;">
+        style="background: url({{ asset('images/' . $solution->image) }}) no-repeat center center;">
+        <div class="overlay" style="background: url({{ asset('images/' . $solution->image) }}) ;">
         </div>
         <div class="overlay-color">
         </div>
         <div class="title text-center pt-0 wow fadeInDown">
-            <h3 class=" text-uppercase fs-1 text-white">DATA CENTER & POWER SOLUTIONS</h3>
+            <h3 class=" text-uppercase fs-1 text-white">{{ $solution->solution->name }}</h3>
             <div class="title-icon d-flex">
                 <div class="div pt-0 bg-danger"></div>
                 <div class="div bottom bg-danger"></div>
@@ -20,14 +20,11 @@
     <!-- start solution logo  -->
     <section id="solution-logo">
         <div class="container">
-            <img src="{{ asset('front_assets/images/Data-Center-2.png') }}" class="d-block m-auto wow fadeIn" data-wow-delay=".2s"
-                width="211" height="69" alt="Maintenance Logo">
             <!-- title  -->
             <div class="title text-center wow fadeInDown mb-5">
                 <h3 class=" text-uppercase text-gray mx-auto">WHAT WE OFFER</h3>
                 <p class="bottom text-uppercase text-secondary ">
-                    OUR DATA CENTER & POWER SOLUTIONS BUSINESS UNIT TAKES A METHODICAL APPROACH, FROM DESIGN, TO SUPPLY,
-                    TO INSTALLATION, TO TESTING, AND COMMISSIONING.
+                    {{ $solution->text1 }}
                 </p>
                 <div class="title-icon d-flex">
                     <div class="div pt-0 bg-danger"></div>
@@ -42,8 +39,7 @@
                     <h5 class=" text-gray text-center" style="font-family: bold; font-size: 14px;">COMPREHENSIVE
                         INTEGRATION OF DATA CENTER DESIGN</h5>
                     <p class="text-secondary text-center" style="font-size: 14px;">
-                        We provide a comprehensive consulting service assisting the customer to determine his facility’s
-                        needs, designing a proposed data center, performing an audit & maintaining it as well.
+                        {{ $solution->text2 }}
                     </p>
                 </div>
                 <!-- start card  -->
@@ -53,8 +49,7 @@
                         CUSTOMERS’ NEEDS
                     </h5>
                     <p class="text-secondary text-center" style="font-size: 14px;">
-                        We evaluate customers’ needs for the present, while anticipating and provisioning for future
-                        growth and expansion.
+                        {{ $solution->text3 }}
                     </p>
                 </div>
                 <!-- start card  -->
@@ -64,8 +59,7 @@
                         PRECISE CUSTOMIZATION
                     </h5>
                     <p class="text-secondary text-center" style="font-size: 14px;">
-                        Solutions are provided by internationally-certified engineers, unlike any other service provider
-                        in the region, for precise customization and superior quality control.
+                        {{ $solution->text4 }}
                     </p>
                 </div>
             </div>
@@ -123,15 +117,10 @@
                     <div class="div bottom bg-danger"></div>
                 </div>
                 <p class="bottom text-uppercase text-beige">
-                    WE OFFER A HOLISTIC APPROACH TO THE DESIGN, OPERATION, AND DELIVERY OF DATA CENTER INFRASTRUCTURE.
-                </p>
+                    {{ $solution->text5 }}                </p>
             </div>
             <p class="text-gray wow fadeIn" data-wow-delay=".2s">
-                As trusted data center system integrators, we support clients to navigate the complexity of project
-                planning and delivery for new facilities and the upgrade or expansion of existing data infrastructure.  
-                With an in-depth understanding of our client’s challenges, risks and commercial objectives, we work as
-                project partners across all construction stages from site selection and evaluation through to testing,
-                commissioning and completion.
+                {{ $solution->text6 }}
             </p>
 
         </div>

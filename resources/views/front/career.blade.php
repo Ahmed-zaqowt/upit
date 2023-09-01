@@ -48,129 +48,28 @@
             </div>
             <form class="search-field pt-5 mx-auto mb-5">
                 <div class="form-group border-white rounded-3 border-1 border d-flex align-items-center px-2 py-1">
-                    <input type="text" class="form-control bg-transparent border-0 text-white shadow-none"
-                        placeholder="Search Vacancies">
-                    <button type="submit"
-                        class="btn border-0 outline-0 d-flex align-items-center justify-content-center"><i
-                            class="fa-solid fa-arrow-right text-secondary"></i></button>
+                    <form method="post" action="{{ route('search') }}" >
+                        <input name="search" type="text" class="form-control bg-transparent border-0 text-white shadow-none"
+                               placeholder="Search Vacancies">
+                        <button type="submit"
+                                class="btn border-0 outline-0 d-flex align-items-center justify-content-center"><i
+                                class="fa-solid fa-arrow-right text-secondary"></i></button>
+                    </form>
+
                 </div>
             </form>
             <div class="row">
                 <div class="career-list col-md-6 p-2 p-md-3 p-xl-4 border-1 border-end border-white-50">
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
+                    @foreach($careers as $i)
+                        <div class="mb-5">
+                            <p class="text-white mb-1">{{$i->title}}</p>
+                            <span class="text-white" style="font-size: 14px;">{{ $i->subtitle }} Limited | {{ $i->start }} -
+                            {{ $i->end }}
                         </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                </div>
-                <div class="career-list col-md-6 p-2 p-md-3 p-xl-4 ">
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
-                    <div class="mb-5">
-                        <p class="text-white mb-1">Senior Project Engineer</p>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">...</button>
-                        <span class="text-white" style="font-size: 14px;">Saudi Electronic Trading & Contracting Company Limited | 19 - Jul -
-                            2023 | Setra-Riyadh |
-                        </span>
-                        <button type="button" style="font-size: 14px;" class="p-0 btn text-white d-block" data-bs-toggle="modal" data-bs-target="#staticBackdrop">162</button>
-                    </div>
+                            <button data-title="{{ $i->title }}" data-start="{{ $i->start }}" data-end="{{ $i->end }}" data-desc="{{ $i->desc }}" type="button" style="font-size: 14px;" class="p-0 btn text-white d-block btn-m" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Show More ... </button>
+                        </div>
+
+                    @endforeach
                 </div>
                 <div class="col-md-6"></div>
             </div>
@@ -185,19 +84,26 @@
       <div class="modal-content">
         <div class="modal-header bg-danger d-flex flex-column gap-3">
             <div class="d-flex justify-content-between align-items-center flex-wrap w-100 gap-3">
-                <h5 class="modal-title border-0 text-white" style="font-family: bold;" id="staticBackdropLabel">Sales</h5>
+                <h5 class="modal-title border-0 text-white" style="font-family: bold;" id="staticBackdropLabel"></h5>
                 <button type="button" class="text-white bg-transparent fs-3 border-0" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
             <div class="d-flex justify-content-between align-items-center flex-wrap w-100 gap-3">
-                <p class="text-white" style="font-size: 14px;">Setra-Riyadh | 24 Jul, 2023</p>
-                <p class="text-white" style="font-size: 14px;">Job Closing Date :   24 Aug, 2023</p>
+                <p class="text-white" style="font-size: 14px;">Setra-Riyadh |<span id="start"></span> </p>
+                <p class="text-white" style="font-size: 14px;">Job Closing Date :   <span id="end"></span></p>
             </div>
         </div>
-        <div class="modal-body text-center mt-4">
-            There Is No Data
+        <div   class="modal-body text-center mt-4">
+  <p id="desc_v"></p>
         </div>
-          <button type="button" class="btn mx-auto mt-5 mb-4 bg-danger text-white" style="font-size: 14px;">Apply Now</button>
-      </div>
+          @if(\Illuminate\Support\Facades\Auth::check())
+              <a href="{{ route('admin.vacant.store' , \Illuminate\Support\Facades\Auth::user()->id) }}" class="btn mx-auto mt-5 mb-4 bg-danger text-white" style="font-size: 14px;">Apply Now</a>
+
+
+          @else
+              <a href="{{ route('login') }}"  class="btn mx-auto mt-5 mb-4 bg-danger text-white" style="font-size: 14px;">Login</a>
+
+          @endif
+       </div>
     </div>
   </div>
 
@@ -236,6 +142,22 @@
                 if (willDelete) {
                     document.getElementById('logout-form').submit();
                 }
+            });
+        });
+
+
+        $(document).ready(function() {
+            $(document).on('click', '.btn-m', function(event) {
+                event.preventDefault();
+                var button = $(this)
+                var id = button.data('id')
+
+                $('#id').val(id);
+                $('#desc_v').text(button.data('desc'));
+                $('#start').text(button.data('start'));
+                $('#end').text(button.data('end'));
+                $('#staticBackdropLabel').text(button.data('title'));
+
             });
         });
     </script>

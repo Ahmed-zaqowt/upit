@@ -13,8 +13,8 @@ class clientController extends Controller
 {
     function index()
     {
-        $users = User::query()->where('status' , 'user')->get();
-       return view('admin.client.index' , compact('users'));
+         $users = User::query()->where('status' , 'user')->get();
+         return view('admin.client.index' , compact('users'));
     }
 
     function store(Request $request)
@@ -24,6 +24,7 @@ class clientController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required',  Rules\Password::defaults()],
+             'role' => 'required' ,
             'image' => ['required'],
         ]);
 
@@ -38,7 +39,8 @@ class clientController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'image' => $imgname,
-            'status' => $request->status ?? 'user'
+            'status' => $request->role ?? 'user' ,
+            'role_id' => $request->role ?? 'user' ,
           ]);
 
 
@@ -52,12 +54,14 @@ class clientController extends Controller
        $request->validate([
           'name' => 'required' ,
            'email' => ['required' , 'email'] ,
+           'role' => 'required' ,
        ]);
 
         $user = User::query()->findOrFail($request->id) ;
         $user->update([
            'name' => $request->name ,
-            'email' => $request->email
+            'email' => $request->email ,
+            'role' => $request->role
         ]);
 
         if ($request->hasFile('image')) {

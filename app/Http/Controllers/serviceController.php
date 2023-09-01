@@ -26,9 +26,21 @@ class serviceController extends Controller
                 $data_attr .= 'data-description="' . $qur->description . '"';
                 $string = '';
 
-                $string .= '<button class="edit_btn btn btn-sm btn-outline-primary btn_edit" data-bs-toggle="modal" data-bs-target="#edit-modal"
-                 ' . $data_attr . '>' . __('edit') . '</button>';
+                $string .= '<button class="edit_btn btn btn-sm btn-outline-primary btn_edit my-2" data-bs-toggle="modal" data-bs-target="#edit-modal"
+                 ' . $data_attr . '>' . __('edit') . '</button> <br>';
                 $string .= ' <button type="button"  class="btn btn-sm btn-outline-danger btn_delete" data-id="' . $qur->id . '" data-url="/admin/service/delete/' . $qur->id . '">' . __('delete') . '  </button>';
+
+                return $string;
+            })
+            ->addColumn('features', function ($qur) {
+                $data_attr = '';
+                $data_attr .= 'data-id="' . $qur->id  . '" ';
+                $data_attr .= 'data-title="' . $qur->name . '"';
+                $data_attr .= 'data-description="' . $qur->description . '"';
+                $string = '';
+                $string .= '<button id="btn-add-f" class="edit_btn btn btn-sm btn-outline-success f-add" data-id="  '. $qur->id .'" data-bs-toggle="modal" data-bs-target="#f-model"
+                >' . __('add') . '</button> <br>';
+
 
                 return $string;
             })
@@ -36,7 +48,7 @@ class serviceController extends Controller
                 $imageData = $qur->image;
                 return $imageData;
             })
-            ->rawColumns(['action' , 'image'])
+            ->rawColumns(['action' , 'image' , 'features'])
             ->make(true);
     }
 

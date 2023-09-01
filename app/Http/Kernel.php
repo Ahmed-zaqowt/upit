@@ -3,6 +3,9 @@
 namespace App\Http;
 
 use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\allMiddiweware;
+use App\Http\Middleware\EditorMiddiweware;
+use App\Http\Middleware\FutureMiddiweware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -54,7 +57,10 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $middlewareAliases = [
-         'auth2' => AdminMiddleware::class ,
+        'all' => allMiddiweware::class ,
+        'future' => FutureMiddiweware::class ,
+        'editor' => EditorMiddiweware::class ,
+        'auth2' => AdminMiddleware::class ,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

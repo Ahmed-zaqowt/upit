@@ -39,9 +39,10 @@
     <section id="main-meaintenance" class="position-relative">
         <div class="main-meaintenance-after"></div>
         <div class="title text-center maintenance-title wow fadeInDown">
-            <p class="top text-uppercase text-beige">LONG-TERM BUSINESS PARTNERSHIPS</p>
-            <h3 class=" text-uppercase text-white">COMPREHENSIVE MAINTENANCE SERVICES</h3>
-            <p class="bottom text-uppercase text-beige">TO ENSURE PEAK PERFORMANCE AT ALL TIMES</p>
+            <p class="top text-uppercase text-beige">{{ $index->text1 ?? '' }}</p>
+
+            <h3 class=" text-uppercase text-white">{{ $index->text2 ?? '' }}</h3>
+            <p class="bottom text-uppercase text-beige">{{ $index->text3 ?? '' }}</p>
             <div class="title-icon d-flex">
                 <div class="div pt-0 bg-beige"></div>
                 <div class="div bottom bg-beige"></div>
@@ -50,57 +51,57 @@
         <div class="content row g-3 p-2 m-0">
             <div class=" col-lg-4">
                 <div class="title text-end wow fadeInLeft">
-                    <h3 class=" text-uppercase fs-5 text-white">AMONG THE MOST SKILLED AND INTERNATIONALLY-CERTIFIED
-                        ENGINEERS IN THE SAUDI MARKET</h3>
-                    <p class="bottom text-uppercase text-beige">MAINTENANCE BUSINESS UNIT</p>
+                    <h3 class=" text-uppercase fs-5 text-white">{{ $index->text4 ?? '' }}</h3>
+                    <p class="bottom text-uppercase text-beige">{{ $index->text5 ?? '' }}</p>
                 </div>
                 <ol class="text-end m-0 p-0 gap-5 row">
                     <li class="text-uppercase text-white d-flex justify-content-end align-items-center gap-2 wow fadeInLeft" data-wow-delay=".1s">
-                        COMPLETE DATA CENTER
+                        {{ $index->text6 ?? '' }}
                         <i class="fa-regular fa-circle text-beige fs-3"></i>
                     </li>
                     <li class="text-uppercase text-white d-flex justify-content-end align-items-center gap-2 wow fadeInLeft" data-wow-delay=".2s">
-                        MISSION CRITICAL FACILITIES
+                        {{ $index->text7 ?? '' }}
                         <i class="fa-regular fa-circle text-beige fs-3"></i>
                     </li>
                     <li class="text-uppercase text-white d-flex justify-content-end align-items-center gap-2 wow fadeInLeft" data-wow-delay=".3s">
-                        STANDBY POWER SYSTEMS
+                        {{ $index->text8 ?? '' }}
                         <i class="fa-regular fa-circle text-beige fs-3"></i>
                     </li>
                     <li class="text-uppercase text-white d-flex justify-content-end align-items-start gap-2 wow fadeInLeft" data-wow-delay=".4s">
-                        <p>FIRE ALARM SYSTEMS<br><span>Certified BY KSA CIVIL DEFENSE</span></p>
+                        <p>{{ $index->text9 ?? '' }}</p>
                         <i class="fa-regular fa-circle text-beige fs-3"></i>
                     </li>
                 </ol>
             </div>
             <div class=" col-lg-4">
                 <div class="img-center text-center wow fadeInUp">
-                    <img src="{{asset('front_assets/images/responsive_mobile.png')}}" alt="">
+                    @if($index != null)
+                    <img src="{{asset('images/' . $index->image)}}" alt="">
+                    @endif
                 </div>
             </div>
             <div class=" col-lg-4 last-maintenance">
                 <div class="title text-start wow fadeInRight">
-                    <h3 class=" text-uppercase fs-5 text-beige">CONSOLIDATED AND STREAMLINED MAINTENANCE ACROSS MULTIPLE
-                        SYSTEMS AND NETWORKS</h3>
-                    <p class="bottom text-uppercase text-danger">POWERED BY SALESFORCE FIELD SERVICE MANAGEMENT SOFTWARE
+                    <h3 class=" text-uppercase fs-5 text-beige">{{ $index->text10 ?? '' }}</h3>
+                    <p class="bottom text-uppercase text-danger">{{ $index->text11 ?? '' }}
                     </p>
                 </div>
                 <ol class="text-start m-0 p-0 row gap-5">
                     <li class="text-uppercase text-gray d-flex justify-content-start align-items-center gap-2 wow fadeInRight" data-wow-delay=".1s">
                         <i class="fa-regular fa-circle text-beige fs-3"></i>
-                        COMPLETE DATA CENTER
+                        {{ $index->text12 ?? '' }}
                     </li>
                     <li class="text-uppercase text-gray d-flex justify-content-start align-items-center gap-2 wow fadeInRight" data-wow-delay=".2s">
                         <i class="fa-regular fa-circle text-beige fs-3"></i>
-                        MISSION CRITICAL FACILITIES
+                        {{ $index->text13 ?? '' }}
                     </li>
                     <li class="text-uppercase text-gray d-flex justify-content-start align-items-center gap-2 wow fadeInRight" data-wow-delay=".3s">
                         <i class="fa-regular fa-circle text-beige fs-3"></i>
-                        STANDBY POWER SYSTEMS
+                        {{ $index->text14 ?? '' }}
                     </li>
                     <li class="text-uppercase text-gray d-flex justify-content-start align-items-center gap-2 wow fadeInRight" data-wow-delay=".4s">
                         <i class="fa-regular fa-circle text-beige fs-3"></i>
-                        <a href="#" class="text-danger">KNOW MORE</a>
+                        {{ $index->text15 ?? '' }}
                     </li>
                 </ol>
             </div>

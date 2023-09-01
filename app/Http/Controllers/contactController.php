@@ -11,7 +11,7 @@ class contactController extends Controller
 {
     function index()
     {
-        return view('admin.contact.index');
+        return view('admin.order.index');
     }
 
     public function getdata(Request $request)

@@ -3,6 +3,38 @@
 
 @section('content')
 
+    <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update News</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form_edit" id="form_edit"  enctype="multipart/form-data" action="{{ route('admin.order.update') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" id="id"  class="form-control">
+                        <div class="mb-2">
+                            <label for="formFileLg" class="form-label">Title</label>
+                            <select  required name="status" class="form-control" type="text">
+                                <option selected disabled>Select Status</option>
+                                <option value="1">pending</option>
+                                <option value="2">processing</option>
+                                <option value="3">completed</option>
+                                <option value="4">canceled</option>
+                            </select>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     {{--      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                 --}}
 
@@ -15,9 +47,10 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Description</th>
+                        <th>Name</th>
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -46,14 +79,14 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        //bindTable
+
         var table = $('#datatable').DataTable({
             processing: true,
             serverSide: true,
             responsive: true,
 
             ajax: {
-                url: '{{ route('admin.contact.getdata') }}',
+                url: '{{ route('admin.order.getdata') }}',
             },
             columns: [{
                 data: 'DT_RowIndex',
@@ -61,9 +94,16 @@
                 orderable: false,
                 searchable: false
             },
+
                 {
                     data: 'name',
                     name: 'name',
+                    orderable: true,
+                    searchable: true
+                },
+                {
+                    data: 'user',
+                    name: 'user',
                     orderable: true,
                     searchable: true
                 },
@@ -74,8 +114,8 @@
                     searchable: true
                 },
                 {
-                    data: 'msg',
-                    name: 'message',
+                    data: 'status',
+                    name: 'status',
                     orderable: true,
                     searchable: true
                 },
@@ -96,9 +136,7 @@
                 event.preventDefault();
                 var button = $(this)
                 var id = button.data('id')
-                $('#id').val(id);
-                $('#edit_title').val(button.data('title'))
-                $('#edit_description').val(button.data('description'))
+                $('#id').val(id)
             });
         });
 

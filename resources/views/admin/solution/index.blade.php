@@ -16,12 +16,14 @@
                     <form enctype="multipart/form-data" action="{{ route('admin.solution.update') }}" method="post">
                         <input type="hidden" name="id" value="">
                         @csrf
+
                         <input name="id" id="id"  class="form-control"  type="hidden">
 
                         <div>
                             <label for="formFileLg" class="form-label">Name</label>
                             <input name="name" id="edit_name"  class="form-control"  type="text">
                         </div>
+
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -64,6 +66,38 @@
                                     <input name="name" type="text" class="form-control" placeholder="Client Name">
                                 </div>
                                 <div class="col-12">
+                                    <label for="formFileLg" class="form-label">WHAT WE OFFER</label>
+                                    <input name="text1"   class="form-control"  type="text">
+                                </div>
+                                <div class="col-12">
+                                    <label for="formFileLg" class="form-label">COMPREHENSIVE INTEGRATION OF DATA CENTER DESIGN</label>
+                                    <input name="text2"   class="form-control"  type="text">
+                                </div>
+                                <div class="col-12">
+                                    <label for="formFileLg" class="form-label">CUSTOMERS’ NEEDS
+                                    </label>
+                                    <input name="text3"   class="form-control"  type="text">
+                                </div>
+                                <div class="col-12">
+                                    <label for="formFileLg" class="form-label">PRECISE CUSTOMIZATION
+                                    </label>
+                                    <input name="text4"  class="form-control"  type="text">
+                                </div>
+                                <div class="col-12">
+                                    <label for="formFileLg" class="form-label">Sub Title
+                                    </label>
+                                    <input name="text5"  class="form-control"  type="text">
+                                </div>
+                                <div class="col-12">
+                                    <label for="formFileLg" class="form-label">Desc
+                                    </label>
+                                    <input name="text6"   class="form-control"  type="text">
+                                </div>
+                                <div>
+                                    <label for="formFileLg" class="form-label">Large file input example</label>
+                                    <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
+                                </div>
+                                <div class="col-12">
                                     <div class="d-grid">
                                         <button type="submit" class="btn btn-primary">Add Client</button>
                                     </div>
@@ -94,8 +128,6 @@
             </div>
         </div>
     </div>
-
-
 
 
 @stop

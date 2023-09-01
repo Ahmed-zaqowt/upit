@@ -3,9 +3,15 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Aboutus;
+use App\Models\Career;
 use App\Models\Contact;
+use App\Models\Feature;
 use App\Models\Image;
+use App\Models\index;
 use App\Models\News;
+use App\Models\Order;
+use App\Models\Page;
 use App\Models\Partner;
 use App\Models\Service;
 use App\Models\Solution;
@@ -14,6 +20,7 @@ use App\Models\Title;
 use App\Models\User;
 use http\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class homeController extends Controller
 {
@@ -21,13 +28,14 @@ class homeController extends Controller
 
     function home()
     {
+        $index = index::find(1);
         $slider_index_top = Image::query()->where('location' , 'index.slider')->get();
         $title_one = Title::query()->where('location' , 'index.title.1')->first();
         $image_card = Image::query()->where('location' , 'index.image.card')->get();
         $image_partners = Partner::all();
         $image_clients = User::query()->where('status' , 'user' )->get();
         return view('front.index' , compact('slider_index_top' ,
-            'title_one' , 'image_card' , 'image_partners' , 'image_clients'));
+            'title_one' , 'image_card' , 'image_partners' , 'image_clients' , 'index'));
     }
 
     function news()
@@ -50,20 +58,23 @@ class homeController extends Controller
     }
 
     function maintenance(){
-        return view('front.maintenance');
+        $services = Service::all();
+        return view('front.maintenance' , compact('services' ));
     }
 
     function about()
     {
+        $about = Aboutus::query()->find(1) ?? null ;
         $image_partners = Partner::all();
-        return view('front.about' ,compact('image_partners'));
+        return view('front.about' ,compact('image_partners' , 'about'));
     }
 
-    function solution()
+    function solution($id)
     {
+        $solution = Page::query()->where('solution_id' , $id)->first();
         $services = Service::all();
         $image_partners = Partner::all();
-        return view('front.solution' ,compact('image_partners' , 'services'));
+        return view('front.solution' ,compact('image_partners' , 'services' , 'solution'));
     }
 
     function contact()
@@ -73,7 +84,8 @@ class homeController extends Controller
 
     function career()
     {
-        return view('front.career');
+        $careers = Career::all();
+        return view('front.career' , compact('careers'));
 
     }
 
@@ -106,4 +118,10 @@ class homeController extends Controller
     }
 
 
+    function search(Request $request){
+
+        $careers =  Career::query()->where('title' , '%Like%' , $request->search)->get();
+
+        return view('front.career' , compact('careers'));
+    }
 }

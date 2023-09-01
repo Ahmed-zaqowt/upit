@@ -27,23 +27,23 @@
     <!-- start nav  -->
     <header class="bg-white">
         <a href="#" class="logo">
-            <img src="{{asset('front_assets/images/cp (1).svg')}}" width="100px" class="py-1" alt="">
+            <img src="assets/images/cp (1).svg" width="100px" class="py-1" alt="">
         </a>
         <div class="navigation">
             <ul class="menu">
                 <div class="close-btn close-div text-light d-flex justify-content-between"> menu<i
                         class=" close-btn fa-solid fa-xmark text-light fs-3"></i></div>
-                <li class="menu-item text-gray active"><a href="{{route('index')}}">Home</a></li>
-                <li class="menu-item text-gray"><a href="{{route('about')}}">about</a></li>
+                <li class="menu-item text-gray active"><a href="{{ route('index')  }}">Home</a></li>
+                <li class="menu-item text-gray"><a href="{{ route('about')  }}">about</a></li>
                 <!-- <li class="menu-item text-gray"><a href="#">services</a></li> -->
                 <li class="menu-item res-menu text-gray">
-                    <a class="sub-btn" href="{{ route('solution') }}">solutions <i class="fas fa-angle-down"></i></a>
+                    <a class="sub-btn">solutions <i class="fas fa-angle-down"></i></a>
                     <ul class="sub-menu bg-white">
                         @php
-                         $solution = \App\Models\Solution::all();
+                            $solution = \App\Models\Solution::all();
                         @endphp
                         @foreach($solution as $i)
-                        <li class="sub-item"><a class="sub-item-link text-capitalize" href="{{route('solution')}}">{{ $i->name }}</a></li>
+                            <li class="sub-item"><a class="sub-item-link text-capitalize" href="{{route('solution' , $i->id)}}">{{ $i->name }}</a></li>
                         @endforeach
                     </ul>
                 </li>
@@ -62,28 +62,49 @@
                 <a class="sub-btn text-danger fs-5" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
                 <ul class="sub-cart bg-white rounded-3 shadow">
                     @php
-                       $stores = \App\Models\Store::all();
+                        $stores = \App\Models\Store::all();
                     @endphp
 
                     @foreach($stores as $store)
-                    <li class="sub-item"><a target="_blank" class="sub-item-link text-capitalize" href="{{ $store->url }}">{{ $store->name }}</a></li>
+                        <li class="sub-item"><a target="_blank" class="sub-item-link text-capitalize" href="{{ $store->url }}">{{ $store->name }}</a></li>
                     @endforeach
                 </ul>
             </li>
             <button id="change-lang" class="btn text-gray">EN</button>
             @if(\Illuminate\Support\Facades\Auth::check())
                 <form  method="post" id="logout-form" action="{{ route('logout') }}">@csrf</form>
-                <a href="{{ route('logout') }}" class="btn btn-outline-danger logout-tag" style="font-size: 14px;">Logout</a>
+                <li class="menu-cart text-gray h-100 d-flex align-items-center">
+                    <a href="#" class="btn btn-outline-danger" style="font-size: 14px;">Oprations</a>
+                    <ul class="sub-cart bg-white rounded-3 shadow text-center">
 
+                        <li class="sub-item">
+                            <!-- <a class="sub-item-link text-capitalize text-center" href="#"> -->
+                            <button type="button"
+                                    class="sub-item-link text-capitalize text-center bg-transparent border-0 text-danger"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                orders
+                            </button>
+                        </li>
+                        <li class="sub-item"><a class="sub-item-link text-capitalize text-center logout-tag"
+                                                href="{{ route('logout') }}">Logout</a>
+                        </li>
+
+                    </ul>
+                </li>
 
             @else
                 <a href="{{ route('login') }}" class="btn btn-outline-danger" style="font-size: 14px;">login</a>
 
             @endif
-                <div class="menu-btn"><i class="fa-solid fa-bars text-danger fs-3"></i></div>
+
+            <div class="menu-btn"><i class="fa-solid fa-bars text-danger fs-3"></i></div>
             <!-- <a href="#" class="btn btn-outline-danger">cart</a> -->
         </div>
     </header>
+
+
+
+
     <div class="after-header" style="margin-bottom: 11vh;"></div>
     <!-- end header  -->
       @yield('content')
@@ -96,21 +117,21 @@
             </div>
             <form method="post" id="contact_form" action="{{ route('post_contact') }}">
                 @csrf
-                <textarea class="form-control mb-4 rounded-0 wow fadeInRight" name="msg" id="" cols="30" rows="10"></textarea>
+                <textarea required class="form-control mb-4 rounded-0 wow fadeInRight" name="msg" id="" cols="30" rows="10"></textarea>
                 @if($errors->has('msg'))
                     <div class="text-danger text-sm error-text">{{ $errors->first('msg') }}</div>
                 @endif
                 <div class="row">
                     <div class="form-group col-md-6 col-lg-6 mb-4 wow fadeInUp" data-wow-delay=".15s">
                         <label class="text-gray text-uppercase" for="">NAME <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control rounded-0">
+                        <input  required type="text" name="name" class="form-control rounded-0">
                         @if($errors->has('name'))
                             <div class="text-danger text-sm error-text">{{ $errors->first('name') }}</div>
                         @endif
                     </div>
                     <div class="form-group col-md-6 col-lg-6 mb-4 wow fadeInUp" data-wow-delay=".25s">
                         <label class="text-gray text-uppercase" for="">EMAIL <span class="text-danger">*</span></label>
-                        <input type="email" name="email" class="form-control rounded-0">
+                        <input required type="email" name="email" class="form-control rounded-0">
                         @if($errors->has('email'))
                             <div class="text-danger text-sm error-text">{{ $errors->first('email') }}</div>
                         @endif
@@ -118,15 +139,66 @@
                 </div>
                 <div class="send row justify-content-between align-items-center my-4 wow fadeIn" data-wow-delay=".5s">
                     <p class="save d-flex align-items-center gap-2 col-md-9">
-                        <input type="checkbox" name="" id="">
-                        <span class="text-secondary"> Save my name, email, and website in this browser for the next time
-                            I comment.</span>
+                        <input   type="hidden" name="" id="">
+                        <span class="text-secondary"> </span>
                     </p>
                     <button type="submit" class="col-md-3 btn btn-danger">POST COMMENT</button>
                 </div>
             </form>
         </div>
     </section>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"><span class="text-danger">{{ \Illuminate\Support\Facades\Auth::user()->name ?? ''}}</span> Orders</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-hover table-responsive">
+                        <thead>
+                        <tr class="text-center">
+                            <th class="p-3" scope="col">Name</th>
+                            <th class="p-3" scope="col">Date</th>
+                            <th class="p-3" scope="col">Status</th>
+                            <th class="p-3" scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                        @php
+                            $orders = \App\Models\Order::query()->where('user_id' , \Illuminate\Support\Facades\Auth::user()->id)->get();
+                        @endphp
+                        @foreach($orders as $order)
+                            <tr class="text-center">
+                                <td class="p-3">{{ $order->service->name  }}</td>
+                                <td class="p-3">{{ $order->created_at }}</td>
+                                @if($order->status == "pending")
+                                    <td class="p-3"><p class="p-1 m-0 rounded-2 bg-secondary  text-white" style="font-size: 14px;">Pending</p></td>
+                                @elseif($order->status == "processing")
+                                    <td class="p-3"><p class="p-1 m-0 rounded-2 bg-info text-white" style="font-size: 14px;">Processing</p></td>
+                                @elseif($order->status == "completed")
+                                    <td class="p-3"><p class="p-1 m-0 rounded-2 bg-success text-white" style="font-size: 14px;">Completed</p></td>
+                                @elseif($order->status == "canceled")
+                                    <td class="p-3"><p class="p-1 m-0 rounded-2 bg-danger  text-white" style="font-size: 14px;">Canceled</p></td>
+                                @endif
+                              @if($order->status != 'canceled')
+                                    <td class="p-3"><button data-url="/order/delete/{{ $order->id }}" class="order_delete"><i class="fa-regular fa-trash-can text-danger fs-5"></i></button></td>
+                                @else
+                                    <td class="p-3"></td>
+
+                                @endif
+                             </tr>
+                        @endforeach
+                        @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- end main contact  -->
     <!-- start footer  -->
     <footer class="bg-gray p-3">
@@ -149,7 +221,6 @@
                     <ul class="p-0 mt-3 d-flex flex-column gap-2">
                         <li class=""><a class="text-white hvr-forward" href="{{route('index')}}">Home</a></li>
                         <li class=""><a class="text-white hvr-forward" href="{{ route('about') }}">About</a></li>
-                        <li class=""><a class="text-white hvr-forward" href="{{ route('solution') }}">Services</a></li>
                         <li class=""><a class="text-white hvr-forward" href="{{ route('maintenance') }}">Maintenance</a></li>
                         <li class=""><a class="text-white hvr-forward" href="{{ route('news') }}">News</a></li>
                         <li class=""><a class="text-white hvr-forward" href="{{ route('contact') }}">Contact</a></li>
@@ -237,6 +308,80 @@
         }).then((willDelete) => {
             if (willDelete) {
                 document.getElementById('logout-form').submit();
+            }
+        });
+    });
+
+    $(document).on("click", ".btn-order", function(e) {
+        var button = $(this)
+        e.preventDefault();
+        swal({
+            title: "Are you sure?",
+            text: "Do you really want to delete this item ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                var url = button.data('url');
+                $.ajax({
+                    url: url,
+                    method: 'post',
+                    type: 'post',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                }).done(function() {
+                    swal("Good job!", "You clicked the button!", "success");
+                    setTimeout(function() {
+                        window.location.reload()
+                    }, 1200);
+
+                }).fail(function() {
+
+                });
+            } else {
+                toastr.error('Canceled Deleted item');
+            }
+        });
+    });
+
+    $(document).on("click", ".order_delete", function(e) {
+
+        var button = $(this)
+        e.preventDefault();
+        swal({
+            title: "Are you sure?",
+            text: "Do you really want to delete this item ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                var id = button.data('id')
+                var url = button.data('url');
+                $.ajax({
+                    url: url,
+                    method: 'PUT',
+                    type: 'PUT',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                }).done(function() {
+                    swal("Good job!", "You clicked the button!", "success")
+                    setTimeout(function() {
+                        window.location.reload()
+                    }, 1200);
+
+
+                }).fail(function() {
+
+                    toastr.error(
+                        'You cannot delete it. There are subsections associated with it !');
+
+                });
+            } else {
+                toastr.error('Canceled Deleted item');
             }
         });
     });

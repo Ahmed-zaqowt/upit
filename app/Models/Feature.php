@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Feature extends Model
 {
     use HasFactory;
-    protected $guarded = [] ;
+protected $guarded = [] ;
 
-    function feature(){
-        return $this->hasMany(Feature::class);
-    }
-
-
+     function service(){
+         return $this->belongsTo(Service::class , 'service_id');
+     }
 }
