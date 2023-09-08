@@ -17,11 +17,11 @@
                         @csrf
                         <input name="id" id="id"  class="form-control"  type="hidden">
                         <div>
-                            <label for="formFileLg" class="form-label">Name</label>
+                            <label  class="form-label">Name</label>
                             <input required name="name" id="edit_name"  class="form-control"  type="text">
                         </div>
                         <div>
-                            <label for="formFileLg" class="form-label">Url</label>
+                            <label  class="form-label">Url</label>
                             <input required name="url" id="edit_url"  class="form-control"  type="url">
                         </div>
                         <div class="modal-footer">
@@ -37,7 +37,7 @@
 
     <div class="card">
         <div class="card-header py-3">
-            <h6 class="mb-0">CLIENTS</h6>
+            <h6 class="mb-0">STORES</h6>
         </div>
         <div class="card-body">
             <div class="row">
@@ -92,7 +92,7 @@
                                     <a target="_blank" href="{{ $store->url }}">o</a>
                                 </div>
                             @empty
-                              <p >There are no clients yet ... </p>
+                              <p >There are no stores yet ... </p>
 
                             @endforelse
                         </div>

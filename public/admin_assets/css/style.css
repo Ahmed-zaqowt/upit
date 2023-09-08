@@ -456,9 +456,7 @@ a {
 	flex-direction: column
 }
 
-.sidebar-wrapper .metismenu li+li {
-	margin-top: 5px
-}
+
 
 .sidebar-wrapper .metismenu li:first-child {
 	margin-top: 5px

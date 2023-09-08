@@ -8,7 +8,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create News</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Upload Image </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -16,7 +16,7 @@
                         @csrf
                        <input type="hidden" id="id" name="id" >
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Name</label>
+                            <label  class="form-label">Name</label>
                             <input required name="name"  class="form-control" placeholder="Features Name"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
@@ -52,7 +52,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update News</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update Service</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -60,7 +60,7 @@
                         @csrf
                         <input type="hidden" name="id" id="id"  class="form-control">
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Title</label>
                             <input id="edit_name" required name="name" class="form-control" type="text">
                             <div class="invalid-feedback"></div>
                         </div>
@@ -79,7 +79,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create News</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Create Service</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -87,17 +87,17 @@
                         @csrf
 
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Title</label>
                             <input required name="title"  class="form-control"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Description</label>
+                            <label  class="form-label">Description</label>
                             <input required name="description"  class="form-control"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Image</label>
+                            <label  class="form-label">Image</label>
                             <input required name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                             <div class="invalid-feedback"></div>
                         </div>
@@ -116,7 +116,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update News</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update Service</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -124,17 +124,17 @@
                         @csrf
                         <input type="hidden" name="id" id="id"  class="form-control">
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Title</label>
                             <input id="edit_title" required name="title" class="form-control" type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Description</label>
+                            <label  class="form-label">Description</label>
                             <input id="edit_description" required name="description"  class="form-control"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Image</label>
+                            <label  class="form-label">Image</label>
                             <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                             <div class="invalid-feedback"></div>
                         </div>
@@ -152,11 +152,11 @@
 
     {{--      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                 --}}
 
-    <h2 class="mt-4" style="color: #2f2f2f">Opration On News</h2>
+    <h2 class="mt-4" style="color: #2f2f2f">Opration On Service</h2>
     <div class="card">
         <div class="card-body">
             <button data-bs-toggle="modal" data-bs-target="#full-modal-stem"   class="btn w-100 mt-3 " style="background-color: #8E0909" type="submit"><span style="color: white">
-                                 Add News
+                                 Add
                              </span></button>
         </div>
     </div>

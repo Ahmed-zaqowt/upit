@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subtitle');
+            $table->text('title');
+            $table->text('subtitle');
             $table->text('desc');
             $table->date('start');
             $table->date('end');

@@ -18,7 +18,7 @@
                         @csrf
                         <div>
                             <input type="hidden" name="id" id="id" >
-                            <label for="formFileLg" class="form-label">Large file input example</label>
+                            <label  class="form-label">Large file input example</label>
                             <input type="hidden" name="location" value="index.slider">
                             <input required name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
@@ -57,7 +57,7 @@
                     <form enctype="multipart/form-data" action="{{ route('admin.home.index_album') }}"  method="post">
                         @csrf
                         <div>
-                            <label for="formFileLg" class="form-label">Large file input example</label>
+                            <label  class="form-label">Large file input example</label>
                             <input type="hidden" name="location" value="index.slider">
                             <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
@@ -103,30 +103,7 @@
 
 
 
-        <div class="col-xl-12 mx-auto">
-            <h6 class="mb-0 text-uppercase">Fancy File Upload</h6>
-            <hr/>
-            <div class="card">
-                <div class="card-body">
-                    @if (session('msg2'))
-                        <div class="alert alert-{{ session('type') }} alertere">
-                            {{ session('msg2') }}
-                        </div>
-                    @endif
 
-                    <form enctype="multipart/form-data" action="{{ route('admin.home.text') }}"  method="post">
-                        @csrf
-                        <input type="hidden" name="id" value="{{ $title_one->id  ?? null}}">
-                        <div class="input-group mb-3">
-                            <input type="hidden" name="location" value="index.title.1">
-                            <input name="name" type="text" class="form-control" placeholder="{{ $title_one->name ?? 'not yet' }}" aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">update</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
 
 
 
@@ -145,7 +122,7 @@
                         @csrf
                         <div>
                             <input type="hidden" name="location" value="index.image.card">
-                            <label for="formFileLg" class="form-label">Large file input example</label>
+                            <label  class="form-label">Large file input example</label>
                             <input required name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
                         <button  class="btn w-100 mt-3 " style="background-color: #8E0909" type="submit"><span style="color: white">
@@ -189,7 +166,7 @@
 
 
             <form method="post" enctype="multipart/form-data" action="{{ route('admin.home.store') }}">
-                <input type="hidden" name="id" value="{{ $about->id ?? '' }}">
+                <input type="hidden" name="id" value="{{ $about->id_create ?? '' }}">
                 @csrf
                 @if (session('msg'))
                     <div class="alert alert-{{ session('type') }} alertere">
@@ -206,9 +183,7 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h6 class="mb-0">CLIENTS </h6>
-                    </div>
+
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12 col-lg-4 d-flex">
@@ -230,7 +205,7 @@
                                             <input value="{{ $about->text3 ?? ''}}"  name="text3" class="form-control" >
                                         </div>
                                         <div>
-                                            <label for="formFileLg" class="form-label">Large file input example</label>
+                                            <label  class="form-label">Large file input example</label>
                                             <input   name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                                         </div>
                                         <hr>
@@ -249,28 +224,28 @@
                                         <h5>Section 2</h5>
                                         <hr>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Title</label>
+                                            <label  class="form-label">Title</label>
                                             <input value="{{ $about->text4 ?? '' }}" name="text4"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Sub Title</label>
+                                            <label  class="form-label">Sub Title</label>
                                             <input value="{{ $about->text5  ?? ''}}" name="text5"   class="form-control"  type="text">
                                         </div>
                                         <hr>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Item</label>
+                                            <label  class="form-label">Item</label>
                                             <input value="{{ $about->text6 ?? '' }}" name="text6"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Item</label>
+                                            <label  class="form-label">Item</label>
                                             <input value="{{ $about->text7 ?? ''}}" name="text7"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Item</label>
+                                            <label  class="form-label">Item</label>
                                             <input value="{{ $about->text8 ?? '' }}" name="text8"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Item</label>
+                                            <label  class="form-label">Item</label>
                                             <input value="{{ $about->text9 ?? ''}}" name="text9"   class="form-control"  type="text">
                                         </div>
 
@@ -283,30 +258,112 @@
                                         <h5>Section 3</h5>
                                      <hr>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Title</label>
+                                            <label  class="form-label">Title</label>
                                             <input value="{{ $about->text10?? '' }}" name="text10"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Sub Title</label>
+                                            <label  class="form-label">Sub Title</label>
                                             <input value="{{ $about->text11  ?? ''}}" name="text11"   class="form-control"  type="text">
                                         </div>
                                         <hr>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Item</label>
+                                            <label class="form-label">Item</label>
                                             <input value="{{ $about->text12 ?? '' }}" name="text12"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Item</label>
+                                            <label  class="form-label">Item</label>
                                             <input value="{{ $about->text13 ?? ''}}" name="text13"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Item</label>
+                                            <label  class="form-label">Item</label>
                                             <input value="{{ $about->text14 ?? '' }}" name="text14"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label for="formFileLg" class="form-label">Item</label>
+                                            <label  class="form-label">Item</label>
                                             <input value="{{ $about->text15 ?? ''}}" name="text15"   class="form-control"  type="text">
                                         </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-lg-4 d-flex">
+                                <div class="card border shadow-none w-100">
+                                    <div class="card-body">
+
+                                        <h5>Section 4</h5>
+                                        <hr>
+                                        <div class="col-12">
+                                            <label class="form-label">OUR PARTNERS</label>
+                                            <input  value="{{ $about->text16 ?? ''}}"  name="text16" class="form-control" >
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">OUR CLIENTS</label>
+                                            <input  value="{{ $about->text17 ?? ''}}" name="text17" class="form-control" >
+                                        </div>
+                                        <hr>
+                                        <div class="col-12">
+                                            <label class="form-label">Title</label>
+                                            <input value="{{ $about->text18 ?? ''}}"  name="text18" class="form-control" >
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Sub Title</label>
+                                            <input  value="{{ $about->text19 ?? ''}}"  name="text19" class="form-control" >
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Title</label>
+                                            <input  value="{{ $about->text20 ?? ''}}" name="text20" class="form-control" >
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Sub Title</label>
+                                            <input value="{{ $about->text21 ?? ''}}"  name="text21" class="form-control" >
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Title</label>
+                                            <input  value="{{ $about->text22 ?? ''}}"  name="text22" class="form-control" >
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Sub Title</label>
+                                            <input  value="{{ $about->text23 ?? ''}}" name="text23" class="form-control" >
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 d-flex">
+                                <div class="card border shadow-none w-100">
+                                    <div class="card-body">
+                                        <h5>Section 5</h5>
+                                        <hr>
+                                        <div class="col-12">
+                                            <label  class="form-label">Title</label>
+                                            <input value="{{ $about->text24 ?? '' }}" name="text24"   class="form-control"  type="text">
+                                        </div>
+                                        <div class="col-12">
+                                            <label  class="form-label">Sub Title</label>
+                                            <input value="{{ $about->text25  ?? ''}}" name="text25"   class="form-control"  type="text">
+                                        </div>
+                                        <hr>
+                                        <div class="col-12">
+                                            <label  class="form-label">Description</label>
+                                            <textarea  name="text26" class="form-control"  type="text">{{ $about->text26 ?? '' }}</textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <label  class="form-label">Title</label>
+                                            <input value="{{ $about->text27 ?? ''}}" name="text27"   class="form-control"  type="text">
+                                        </div>
+                                        <div class="col-12">
+                                            <label  class="form-label">Sub Title</label>
+                                            <input value="{{ $about->text28 ?? '' }}" name="text28"   class="form-control"  type="text">
+                                        </div>
+
 
                                     </div>
                                 </div>

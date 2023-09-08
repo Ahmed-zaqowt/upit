@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('solution_id')->constrained('solutions');
-            $table->string('text1')->nullable();
-            $table->string('text2')->nullable();
-            $table->string('text3')->nullable();
-            $table->string('text4')->nullable();
-            $table->string('text5')->nullable();
-            $table->string('text6')->nullable();
-            $table->string('image')->nullable();
+            $table->text('text1')->nullable();
+            $table->text('text2')->nullable();
+            $table->text('text3')->nullable();
+            $table->text('text4')->nullable();
+            $table->text('text5')->nullable();
+            $table->text('text6')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

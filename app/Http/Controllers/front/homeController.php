@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Aboutus;
 use App\Models\Career;
 use App\Models\Contact;
+use App\Models\ContactUs;
 use App\Models\Feature;
 use App\Models\Image;
 use App\Models\index;
@@ -28,7 +29,7 @@ class homeController extends Controller
 
     function home()
     {
-        $index = index::find(1);
+        $index = index::query()->where('id_create' , '1')->first();
         $slider_index_top = Image::query()->where('location' , 'index.slider')->get();
         $title_one = Title::query()->where('location' , 'index.title.1')->first();
         $image_card = Image::query()->where('location' , 'index.image.card')->get();
@@ -79,7 +80,8 @@ class homeController extends Controller
 
     function contact()
     {
-        return view('front.contact');
+        $contacts = ContactUs::all();
+        return view('front.contact' , compact('contacts'));
     }
 
     function career()

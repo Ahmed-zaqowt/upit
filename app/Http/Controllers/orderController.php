@@ -25,7 +25,7 @@ class orderController extends Controller
                 return $qur->user->name ;
             })
             ->addColumn('email' , function ($qur){
-                return $qur->user->email ;
+                return '<p  class="text-success ">' . $qur->user->email .'</p>'  ;
             })
             ->addColumn('status' , function ($qur){
                 return $qur->status ;
@@ -46,7 +46,7 @@ class orderController extends Controller
 
     function update(Request $request){
         $request->validate([
-          $request->status => 'required'
+          'status' => 'required'
         ]);
 
         $order = Order::query()->findOrFail($request->id);
@@ -55,7 +55,7 @@ class orderController extends Controller
         ]);
 
         return  response()->json([
-            'success' => 'Updated News Successfully'
+            'success' => 'Updated Order Status Successfully'
         ], 201);
     }
 }

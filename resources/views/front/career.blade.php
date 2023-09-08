@@ -66,7 +66,7 @@
                             <span class="text-white" style="font-size: 14px;">{{ $i->subtitle }} Limited | {{ $i->start }} -
                             {{ $i->end }}
                         </span>
-                            <button data-title="{{ $i->title }}" data-start="{{ $i->start }}" data-end="{{ $i->end }}" data-desc="{{ $i->desc }}" type="button" style="font-size: 14px;" class="p-0 btn text-white d-block btn-m" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Show More ... </button>
+                            <button data-id="{{ $i->id }}" data-title="{{ $i->title }}" data-start="{{ $i->start }}" data-end="{{ $i->end }}" data-desc="{{ $i->desc }}" type="button" style="font-size: 14px;" class="mt-1 text-white d-block btn btn-light btn-sm btn-m" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Show More ... </button>
                         </div>
 
                     @endforeach
@@ -93,16 +93,20 @@
             </div>
         </div>
         <div   class="modal-body text-center mt-4">
-  <p id="desc_v"></p>
-        </div>
-          @if(\Illuminate\Support\Facades\Auth::check())
-              <a href="{{ route('admin.vacant.store' , \Illuminate\Support\Facades\Auth::user()->id) }}" class="btn mx-auto mt-5 mb-4 bg-danger text-white" style="font-size: 14px;">Apply Now</a>
+           <p id="desc_v"></p>
 
+             @if(\Illuminate\Support\Facades\Auth::check())
+              <form method="POST" action="{{ route('admin.vacant.store' , \Illuminate\Support\Facades\Auth::user()->id) }}">
+                  @csrf
+                  <input type="hidden" id="id" name="id">
+                  <button style="justify-content: center" class="btn mx-auto mt-5 mb-4 bg-danger text-white" style="font-size: 14px;">Apply Now</button>
+              </form>
 
-          @else
-              <a href="{{ route('login') }}"  class="btn mx-auto mt-5 mb-4 bg-danger text-white" style="font-size: 14px;">Login</a>
+             @else
+               <a href="{{ route('login') }}"  class="btn mx-auto mt-5 mb-4 bg-danger text-white" style="font-size: 14px;">Login</a>
 
           @endif
+        </div>
        </div>
     </div>
   </div>

@@ -7,7 +7,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update News</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update Order Status</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -15,7 +15,7 @@
                         @csrf
                         <input type="hidden" name="id" id="id"  class="form-control">
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Status</label>
                             <select  required name="status" class="form-control" type="text">
                                 <option selected disabled>Select Status</option>
                                 <option value="1">pending</option>
@@ -38,7 +38,7 @@
 
     {{--      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                 --}}
 
-    <h2 class="mt-4" style="color: #2f2f2f">Opration On News</h2>
+    <h2 class="mt-4" style="color: #2f2f2f">Opration On Orders</h2>
 
     <div class="card">
         <div class="card-body">

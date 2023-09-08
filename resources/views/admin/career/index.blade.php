@@ -15,27 +15,27 @@
                         @csrf
 
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Title</label>
                             <input required name="title"  class="form-control"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Sub Title</label>
+                            <label  class="form-label">Sub Title</label>
                             <input required name="subtitle"  class="form-control"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Description</label>
+                            <label  class="form-label">Description</label>
                             <textarea required name="desc"  class="form-control"  type="text"></textarea>
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Start</label>
+                            <label  class="form-label">Start</label>
                             <input required name="start"  class="form-control"  type="date">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">End</label>
+                            <label  class="form-label">End</label>
                             <input required name="end"  class="form-control"  type="date">
                             <div class="invalid-feedback"></div>
                         </div>
@@ -62,27 +62,27 @@
                         @csrf
                         <input type="hidden" name="id" id="id"  class="form-control">
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Title</label>
                             <input id="edit_title" required name="title" class="form-control" type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Title</label>
                             <input id="edit_subtitle" required name="subtitle" class="form-control" type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Description</label>
+                            <label  class="form-label">Description</label>
                             <textarea id="edit_desc" required name="desc"  class="form-control"  type="text"></textarea>
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Start</label>
+                            <label  class="form-label">Start</label>
                             <input required id="edit_start" name="start"  class="form-control"  type="date">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">End</label>
+                            <label  class="form-label">End</label>
                             <input required id="edit_end" name="end"  class="form-control"  type="date">
                             <div class="invalid-feedback"></div>
                         </div>
@@ -102,11 +102,11 @@
 
 
 
-    <h2 class="mt-4" style="color: #2f2f2f">Opration On News</h2>
+    <h2 class="mt-4" style="color: #2f2f2f">Opration On Careers</h2>
     <div class="card">
         <div class="card-body">
             <button data-bs-toggle="modal" data-bs-target="#full-modal-stem"   class="btn w-100 mt-3 " style="background-color: #8E0909" type="submit"><span style="color: white">
-                                 Add News
+                                 Add
                              </span></button>
         </div>
     </div>

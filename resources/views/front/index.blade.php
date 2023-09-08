@@ -116,8 +116,7 @@
         <div class="container">
             <div class="title text-center wow fadeInDown">
                 <h3 class=" text-uppercase text-danger">OUR CLIENTS</h3>
-                <p class="bottom text-uppercase text-beige">HEALTHCARE, BANKING, TELECOMMUNICATIONS, EDUCATION, FOOD &
-                    BEVERAGE AND PUBLIC SECTOR</p>
+                <p class="bottom text-uppercase text-beige">{{ $index->text17 ?? ''}}</p>
                 <div class="title-icon d-flex">
                     <div class="div pt-0 bg-danger"></div>
                     <div class="div bottom bg-danger"></div>
@@ -146,39 +145,32 @@
                 <div class="d-flex align-items-start gap-3 f-1 wow fadeInRight" data-wow-delay=".1s">
                     <i class="fa-solid fa-location-dot text-danger text-i fs-3"></i>
                     <div class=" d-flex flex-column">
-                        <h5 class="text-uppercase fs-6 text-danger" style="font-family: bold;">COVERING THE ENTIRE
-                            KINGDOM OF
-                            SAUDI ARABIA</h5>
-                        <span class="text-beige d-block fs-6">Through our 3 main branches in Riyadh, Jeddah &
-                            Khobar</span>
+                        <h5 class="text-uppercase fs-6 text-danger" style="font-family: bold;">{{ $index->text18 ?? '' }}</h5>
+                        <span class="text-beige d-block fs-6">{{ $index->text19 ?? '' }}</span>
                     </div>
                 </div>
                 <!-- 2 -->
                 <div class="d-flex align-items-start gap-3 f-2 wow fadeInRight" data-wow-delay=".2s">
                     <i class="fa-solid fa-user-tie text-danger text-i fs-3"></i>
                     <div class=" d-flex flex-column">
-                        <h5 class="text-uppercase fs-6 text-danger" style="font-family: bold;">SERVING OVER 1,000
-                            SATISFIED
-                            CLIENTS</h5>
-                        <span class="text-beige d-block fs-6">Through timely deliveries and successful execution</span>
+                        <h5 class="text-uppercase fs-6 text-danger" style="font-family: bold;">{{ $index->text20 ?? ''}}</h5>
+                        <span class="text-beige d-block fs-6">{{ $index->text21 ?? ''}}</span>
                     </div>
                 </div>
                 <!-- 3 -->
                 <div class="d-flex align-items-start gap-3 f-3 wow fadeInRight" data-wow-delay=".3s">
                     <i class="fas fa-users-cog text-danger text-i fs-3"></i>
                     <div class=" d-flex flex-column">
-                        <h5 class="text-uppercase fs-6 text-danger" style="font-family: bold;">GROWN INTO A COMPANY WITH
-                            400+
-                            EMPLOYEES</h5>
-                        <span class="text-beige d-block fs-6">Focused on highly skilled Engineers & Technicians</span>
+                        <h5 class="text-uppercase fs-6 text-danger" style="font-family: bold;">{{ $index->text22 ?? ''}}</h5>
+                        <span class="text-beige d-block fs-6">{{ $index->text23 ?? ''}}</span>
                     </div>
                 </div>
             </div>
             <!-- second  -->
             <div class="download">
                 <div class="title my-1 text-center wow fadeInDown">
-                    <h3 class=" text-uppercase text-white fs-1">FOCUSED ON DELIVERY</h3>
-                    <p class="bottom text-uppercase text-beige">COMMITTED TO DELIVERING THE HIGHEST IN QUALITY</p>
+                    <h3 class=" text-uppercase text-white fs-1">{{ $index->text24 ?? ''}}</h3>
+                    <p class="bottom text-uppercase text-beige">{{ $index->text25 ?? ''}}</p>
                     <div class="title-icon d-flex">
                         <div class="div pt-0 bg-white"></div>
                         <div class="div bottom bg-white"></div>
@@ -186,25 +178,18 @@
                 </div>
                 <div class="d-flex gap-3 align-items-start flex-column flex-lg-row">
                     <div class="order-2 order-lg-1 text-center wow fadeInRight">
-                        <p class=" text-white text-start">We continue to pursue excellence in the industry, leveraging
-                            decades of
-                            experience, and
-                            constantly enhancing our solutions with a complete successful coverage all over the kingdom.
+                        <p class=" text-white text-start">{{ $index->text26 ?? ''}}
                         </p>
                         <a href="#" class="btn btn-block btn-outline-light rounded-0">DOWNLOAD
                             BROCHURE</a>
                     </div>
-                    <img src="{{asset('front_assets/images/iso.png')}}" class="order-1 order-lg-2 wow fadeInLeft" alt="">
                 </div>
             </div>
             <!-- third -->
             <div class="text-center third">
                 <div class="title text-center wow fadeInDown">
-                    <h3 class=" text-uppercase text-white fs-2">WANT TO EMPOWER YOUR ORGANIZATION
-                        WITH MISSION CRITICAL front_assets
-                        THAT STAND BY YOU WHEN YOU NEED THEM MOST?</h3>
-                    <p class="bottom text-uppercase text-beige">GET IN TOUCH WITH US, AND LET OUR EXPERIENCED TEAM
-                        CREATE THE PERFECT SOLUTION FOR YOUR NEEDS AND BUDGET.</p>
+                    <h3 class=" text-uppercase text-white fs-2">{{ $index->text27 ?? ''}}</h3>
+                    <p class="bottom text-uppercase text-beige">{{ $index->text28 ?? ''}}</p>
                     <div class="title-icon d-flex">
                         <div class="div pt-0 bg-white"></div>
                         <div class="div bottom bg-white"></div>

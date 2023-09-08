@@ -18,15 +18,15 @@
                         <input name="id" id="id"  class="form-control"  type="hidden">
 
                         <div>
-                            <label for="formFileLg" class="form-label">Name</label>
+                            <label  class="form-label">Name</label>
                             <input required name="name" id="edit_name"  class="form-control"  type="text">
                         </div>
                         <div>
-                            <label for="formFileLg" class="form-label">Email</label>
+                            <label  class="form-label">Email</label>
                             <input required name="email"  class="form-control" id="edit_email" type="email">
                         </div>
                         <div>
-                            <label for="formFileLg" class="form-label">Image</label>
+                            <label  class="form-label">Image</label>
                             <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
                         <div class="modal-footer">
@@ -80,10 +80,6 @@
                                 <div class="col-12">
                                     <label class="form-label">Image</label>
                                     <input required name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
-                                </div>
-                                <div class="form-check">
-                                    <input name="status" class="form-check-input" type="checkbox" value="admin"  id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">Status User</label>
                                 </div>
                                 <div class="col-12">
                                     <div class="d-grid">

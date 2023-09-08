@@ -96,7 +96,21 @@ class indexPageController extends Controller
            'text13' => 'required' ,
            'text14' => 'required' ,
            'text15' => 'required' ,
+           'text16' => 'required' ,
+           'text17' => 'required' ,
+           'text18' => 'required' ,
+           'text19' => 'required' ,
+           'text20' =>'required' ,
+           'text21' => 'required' ,
+           'text22' => 'required' ,
+           'text23' => 'required' ,
+           'text24' => 'required' ,
+           'text25' => 'required' ,
+           'text26' => 'required',
+           'text27' =>'required' ,
+           'text28' => 'required' ,
        ]);
+
 
 
        if ($request->hasFile('image')) {
@@ -109,8 +123,7 @@ class indexPageController extends Controller
 
 
        index::query()->updateOrCreate(
-           ['id' => $request->id] ,
-
+           ['id_create' => $request->id] ,
            [
                'text1' => $request->text1 ,
                'text2' => $request->text2 ,
@@ -127,7 +140,20 @@ class indexPageController extends Controller
                'text13' => $request->text13 ,
                'text14' => $request->text14 ,
                'text15' => $request->text15 ,
-
+               'text16' => $request->text16 ,
+               'text17' => $request->text17 ,
+               'text18' => $request->text18 ,
+               'text19' => $request->text19 ,
+               'text20' => $request->text20 ,
+               'text21' => $request->text21 ,
+               'text22' => $request->text22 ,
+               'text23' => $request->text23 ,
+               'text24' => $request->text24 ,
+               'text25' => $request->text25 ,
+               'text26' => $request->text26 ,
+               'text27' => $request->text27 ,
+               'text28' => $request->text28 ,
+               'id_create' => '1'
 
            ]
        );

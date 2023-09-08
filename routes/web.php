@@ -126,8 +126,13 @@ Route::prefix('admin')->middleware('all')->name('admin.')->group(function () {
 
         Route::prefix('contact')->controller(\App\Http\Controllers\contactController::class)->name('contact.')->group(function () {
             Route::get('/', 'index')->name('index');
+            Route::get('contact' , 'contact')->name('contact');
+            Route::post('store' , 'store')->name('store');
+            Route::post('update' , 'update')->name('update');
             Route::delete('delete/{id}', 'delete')->name('delete');
+            Route::delete('destroy/{id}', 'destroy')->name('destroy');
             Route::get('getdata', 'getdata')->name('getdata');
+            Route::get('getdata_contact', 'getdata_contact')->name('contact.getdata');
         });
 
         Route::prefix('order')->controller(\App\Http\Controllers\orderController::class)->name('order.')->group(function () {
@@ -146,7 +151,8 @@ Route::prefix('admin')->middleware('all')->name('admin.')->group(function () {
 
         Route::prefix('vacant')->controller(\App\Http\Controllers\vacantController::class)->name('vacant.')->group(function () {
             Route::get('/', 'index')->name('index');
-            Route::get('store/{id}', 'store')->name('store');
+            Route::get('/getdata', 'getdata')->name('getdata');
+            Route::post('store/{id}', 'store')->name('store');
             Route::delete('delete/{id}', 'delete')->name('delete');
         });
 

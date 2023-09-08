@@ -50,7 +50,7 @@
                         placeholder="Password">
                     <!-- <a href="#" class="text-white d-block text-end" style="font-size: 14px;">Forgot Password?</a> -->
                     @if (Route::has('password.request'))
-                        <a class="forgot-modal btn text-white d-block text-end"  href="{{ route('password.request') }}"
+                        <a class="forgot-modal btn text-white d-block text-end" data-bs-toggle="modal"  href="#forgot-pass"
                            role="button">Forgot Password ?</a>
                     @endif
 
@@ -65,7 +65,30 @@
     </section>
 
 
-
+    <div class="modal fade" id="forgot-pass" aria-hidden="true" aria-labelledby="forgot-toggle" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-danger p-3 rounded-5">
+                <button type="button"
+                        class=" close-forgot-modal btn bg-transparent text-white d-block ms-auto px-2 bg-white fs-5"
+                        style="width: fit-content;" data-bs-dismiss="modal" aria-label="Close">x</button>
+                <h5 class="modal-title text-center text-white mb-3" id="forgot-toggle">Forgot Password</h5>
+                <p class="text-center text-white mb-4" style="font-size: 12px;">To Reset Your Password, Enter Your email
+                    ID
+                    In The Following Field, Then You Will Receive A New Email Shortly</p>
+                <div class="modal-body">
+                    <form method="post" action="{{  route('password.email') }}">
+                        @csrf
+                        <div class="form-group d-flex gap-5 align-items-center w-75 mb-3">
+                            <label for="forgot-email" style="font-size: 14px; color: #fff;">Email</label>
+                            <input type="text" name="email" id="forgot-email" class="form-control bg-transparent border-white">
+                        </div>
+                        <button type="submit" class="btn d-block mx-auto bg-white px-4 text-danger"
+                                style="font-size: 14px; width: fit-content;" data-bs-dismiss="modal">send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

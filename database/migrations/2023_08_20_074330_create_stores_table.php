@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('url');
+            $table->text('name');
+            $table->text('url');
             $table->timestamps();
         });
     }

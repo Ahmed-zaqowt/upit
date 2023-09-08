@@ -13,16 +13,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form enctype="multipart/form-data" action="{{ route('admin.client.update') }}" method="post">
+                    <form enctype="multipart/form-data" action="{{ route('admin.admin.update') }}" method="post">
                         @csrf
                         <input name="id" id="id"  class="form-control"  type="hidden">
 
                         <div>
-                            <label for="formFileLg" class="form-label">Name</label>
+                            <label  class="form-label">Name</label>
                             <input required name="name" id="edit_name"  class="form-control"  type="text">
                         </div>
                         <div>
-                            <label for="formFileLg" class="form-label">Email</label>
+                            <label  class="form-label">Email</label>
                             <input required name="email"  class="form-control" id="edit_email" type="email">
                         </div>
                         <div>
@@ -34,7 +34,7 @@
                             </select>
                         </div>
                         <div>
-                            <label for="formFileLg" class="form-label">Image</label>
+                            <label  class="form-label">Image</label>
                             <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
                         <div class="modal-footer">
@@ -50,7 +50,7 @@
 
     <div class="card">
         <div class="card-header py-3">
-            <h6 class="mb-0">CLIENTS</h6>
+            <h6 class="mb-0">ADMINS</h6>
         </div>
         <div class="card-body">
             <div class="row">
@@ -71,7 +71,7 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form method="post" id="add_form" enctype="multipart/form-data" action="{{ route('admin.client.store') }}" class="row g-3">
+                            <form method="post" id="add_form" enctype="multipart/form-data" action="{{ route('admin.admin.store') }}" class="row g-3">
                                 @csrf
                             <div class="col-12">
                                     <label class="form-label">Name</label>
@@ -112,7 +112,7 @@
 
                             @forelse($users as $user)
                                 <div class="chip">
-                                    <span data-role_id="{{ $user->role_id }}" data-id="{{ $user->id }}" data-name="{{ $user->name }}" data-email="{{ $user->email }}" class="edit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="{{ asset('images/'.$user->image) }}" alt="Contact Person">{{$user->name}}</span>
+                                    <span data-role="{{ $user->role_id }}" data-id="{{ $user->id }}" data-name="{{ $user->name }}" data-email="{{ $user->email }}" class="edit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="{{ asset('images/'.$user->image) }}" alt="Contact Person">{{$user->name}}</span>
                                     <form class="d-inline" action="{{ route('admin.client.delete' , $user->id) }}" method="post">
                                         @csrf
                                         @method('delete')
@@ -136,10 +136,6 @@
 @stop
 @section('js')
     <script>
-
-
-
-
         $(document).ready(function() {
             $(document).on('click', '.edit_btn', function(event) {
                 event.preventDefault();
@@ -147,11 +143,11 @@
                 var id = button.data('id')
                 var name = button.data('name')
                 var email = button.data('email')
-
+                var role = button.data('role')
                 $('#id').val(id);
                 $('#edit_name').val(name);
                 $('#edit_email').val(email);
-                $('#edit_role').val(button.data('role_id'));
+                $('#edit_role').val(role);
             });
         });
     </script>

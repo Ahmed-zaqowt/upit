@@ -19,11 +19,11 @@
                         <input name="id" id="id"  class="form-control"  type="hidden">
 
                         <div>
-                            <label for="formFileLg" class="form-label">Name</label>
+                            <label  class="form-label">Name</label>
                             <input name="name" id="edit_name"  class="form-control"  type="text">
                         </div>
                         <div>
-                            <label for="formFileLg" class="form-label">Image</label>
+                            <label  class="form-label">Image</label>
                             <input name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
                         <div class="modal-footer">
@@ -39,7 +39,7 @@
 
     <div class="card">
         <div class="card-header py-3">
-            <h6 class="mb-0">CLIENTS </h6>
+            <h6 class="mb-0">PARTNER </h6>
         </div>
         <div class="card-body">
             <div class="row">

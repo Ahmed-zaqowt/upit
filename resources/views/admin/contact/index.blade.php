@@ -6,7 +6,7 @@
 
     {{--      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                 --}}
 
-    <h2 class="mt-4" style="color: #2f2f2f">Opration On News</h2>
+    <h2 class="mt-4" style="color: #2f2f2f">MESSAGES CONTACT </h2>
 
     <div class="card">
         <div class="card-body">
@@ -15,9 +15,9 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Description</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>message</th>
                         <th>Action</th>
                     </tr>
                     </thead>

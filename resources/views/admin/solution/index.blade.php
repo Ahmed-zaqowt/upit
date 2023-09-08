@@ -9,7 +9,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Client</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Solution</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -20,7 +20,7 @@
                         <input name="id" id="id"  class="form-control"  type="hidden">
 
                         <div>
-                            <label for="formFileLg" class="form-label">Name</label>
+                            <label  class="form-label">Name</label>
                             <input name="name" id="edit_name"  class="form-control"  type="text">
                         </div>
 
@@ -38,7 +38,7 @@
 
     <div class="card">
         <div class="card-header py-3">
-            <h6 class="mb-0">CLIENTS </h6>
+            <h6 class="mb-0">ADD SOLUTION</h6>
         </div>
         <div class="card-body">
             <div class="row">
@@ -63,38 +63,38 @@
                                 @csrf
                             <div class="col-12">
                                     <label class="form-label">Name</label>
-                                    <input name="name" type="text" class="form-control" placeholder="Client Name">
+                                    <input name="name" type="text" class="form-control">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">WHAT WE OFFER</label>
+                                    <label  class="form-label">WHAT WE OFFER</label>
                                     <input name="text1"   class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">COMPREHENSIVE INTEGRATION OF DATA CENTER DESIGN</label>
+                                    <label  class="form-label">COMPREHENSIVE INTEGRATION OF DATA CENTER DESIGN</label>
                                     <input name="text2"   class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">CUSTOMERS’ NEEDS
+                                    <label  class="form-label">CUSTOMERS’ NEEDS
                                     </label>
                                     <input name="text3"   class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">PRECISE CUSTOMIZATION
+                                    <label  class="form-label">PRECISE CUSTOMIZATION
                                     </label>
                                     <input name="text4"  class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">Sub Title
+                                    <label  class="form-label">Sub Title
                                     </label>
                                     <input name="text5"  class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">Desc
+                                    <label  class="form-label">Desc
                                     </label>
                                     <input name="text6"   class="form-control"  type="text">
                                 </div>
                                 <div>
-                                    <label for="formFileLg" class="form-label">Large file input example</label>
+                                    <label  class="form-label">Large file input example</label>
                                     <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                                 </div>
                                 <div class="col-12">

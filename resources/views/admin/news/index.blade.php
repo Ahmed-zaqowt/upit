@@ -15,17 +15,17 @@
                         @csrf
 
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Title</label>
                             <input required name="title"  class="form-control"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Description</label>
+                            <label  class="form-label">Description</label>
                             <input required name="description"  class="form-control"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Image</label>
+                            <label  class="form-label">Image</label>
                             <input required name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                             <div class="invalid-feedback"></div>
                         </div>
@@ -52,17 +52,17 @@
                         @csrf
                         <input type="hidden" name="id" id="id"  class="form-control">
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Title</label>
+                            <label  class="form-label">Title</label>
                             <input id="edit_title" required name="title" class="form-control" type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Description</label>
+                            <label  class="form-label">Description</label>
                             <input id="edit_description" required name="description"  class="form-control"  type="text">
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-2">
-                            <label for="formFileLg" class="form-label">Image</label>
+                            <label  class="form-label">Image</label>
                             <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                             <div class="invalid-feedback"></div>
                         </div>
@@ -90,7 +90,7 @@
                         <input type="hidden" name="id" value="{{ $image_news->id ?? null }}">
                         @csrf
                         <div>
-                            <label for="formFileLg" class="form-label">Large file input example</label>
+                            <label  class="form-label">Large file input example</label>
                             <input required name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
                         <div class="modal-footer">
@@ -113,7 +113,7 @@
                 @csrf
                 @if($image_news == null)
                 <div>
-                    <label for="formFileLg" class="form-label">chose the image .. </label>
+                    <label  class="form-label">chose the image .. </label>
                     <input type="hidden" name="location" value="news.one">
                     <input required name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                 </div>

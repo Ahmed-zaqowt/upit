@@ -2,7 +2,7 @@
     <div class="container">
         <div class="title text-center wow fadeInDown">
             <h3 class=" text-uppercase text-danger">OUR PARTNERS</h3>
-            <p class="bottom text-uppercase text-beige">STRONG PARTNERSHIPS WITH TIER-ONE VENDORS</p>
+            <p class="bottom text-uppercase text-beige">{{ $index->text16 ?? '' }}</p>
             <div class="title-icon d-flex">
                 <div class="div pt-0 bg-danger"></div>
                 <div class="div bottom bg-danger"></div>

@@ -13,4 +13,8 @@ class Vacant extends Model
     function user(){
         return $this->belongsTo(User::class );
     }
+
+    function career(){
+        return $this->belongsTo(Career::class );
+    }
 }

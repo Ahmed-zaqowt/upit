@@ -13,26 +13,26 @@ return new class extends Migration
     {
         Schema::create('aboutuses', function (Blueprint $table) {
             $table->id();
-            $table->string('text1')->nullable();
-            $table->string('text2')->nullable();
-            $table->string('text3')->nullable();
-            $table->string('text4')->nullable();
-            $table->string('text5')->nullable();
-            $table->string('text6')->nullable();
-            $table->string('text7')->nullable();
-            $table->string('text8')->nullable();
-            $table->string('text9')->nullable();
-            $table->string('text10')->nullable();
-            $table->string('text11')->nullable();
-            $table->string('text12')->nullable();
-            $table->string('text13')->nullable();
-            $table->string('text14')->nullable();
-            $table->string('text15')->nullable();
-            $table->string('text16')->nullable();
-            $table->string('text17')->nullable();
-            $table->string('image_sec_1')->nullable();
-            $table->string('image_sec_2')->nullable();
-            $table->string('image_sec_3')->nullable();
+            $table->text('text1')->nullable();
+            $table->text('text2')->nullable();
+            $table->text('text3')->nullable();
+            $table->text('text4')->nullable();
+            $table->text('text5')->nullable();
+            $table->text('text6')->nullable();
+            $table->text('text7')->nullable();
+            $table->text('text8')->nullable();
+            $table->text('text9')->nullable();
+            $table->text('text10')->nullable();
+            $table->text('text11')->nullable();
+            $table->text('text12')->nullable();
+            $table->text('text13')->nullable();
+            $table->text('text14')->nullable();
+            $table->text('text15')->nullable();
+            $table->text('text16')->nullable();
+            $table->text('text17')->nullable();
+            $table->text('image_sec_1')->nullable();
+            $table->text('image_sec_2')->nullable();
+            $table->text('image_sec_3')->nullable();
             $table->timestamps();
         });
     }

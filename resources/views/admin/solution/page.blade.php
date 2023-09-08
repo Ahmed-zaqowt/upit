@@ -30,35 +30,35 @@
                                 @csrf
                                 @method('put')
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">WHAT WE OFFER</label>
+                                    <label  class="form-label">WHAT WE OFFER</label>
                                     <input name="text1"  value="{{ $page->text1 }}"  class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">COMPREHENSIVE INTEGRATION OF DATA CENTER DESIGN</label>
+                                    <label  class="form-label">COMPREHENSIVE INTEGRATION OF DATA CENTER DESIGN</label>
                                     <input name="text2"  value="{{ $page->text2 }}"   class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">CUSTOMERS’ NEEDS
+                                    <label  class="form-label">CUSTOMERS’ NEEDS
                                     </label>
                                     <input name="text3"  value="{{ $page->text3 }}"   class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">PRECISE CUSTOMIZATION
+                                    <label  class="form-label">PRECISE CUSTOMIZATION
                                     </label>
                                     <input name="text4"  value="{{ $page->text4 }}"  class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">Sub Title
+                                    <label  class="form-label">Sub Title
                                     </label>
                                     <input name="text5"  value="{{ $page->text5 }}"  class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label for="formFileLg" class="form-label">Desc
+                                    <label  class="form-label">Desc
                                     </label>
                                     <input name="text6"   value="{{ $page->text6 }}"  class="form-control"  type="text">
                                 </div>
                                 <div>
-                                    <label for="formFileLg" class="form-label">Large file input example</label>
+                                    <label  class="form-label">Large file input example</label>
                                     <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                                 </div>
                                 <img width="150px" height="400px" style="border-radius: 12px ;"  src="{{ asset('images/'.$page->image) }}" class="card-img-top" alt="...">
