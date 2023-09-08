@@ -46,21 +46,22 @@
                 <i class="fa fa-bag-shopping text-white" style="font-size: 50px;"></i>
                 <span class="text-uppercase fs-5 text-white" style="font-family: bold;">vacancies</span>
             </div>
-            <form class="search-field pt-5 mx-auto mb-5">
+            <form action="{{ route('search') }}" class="search-field pt-5 mx-auto mb-5">
                 <div class="form-group border-white rounded-3 border-1 border d-flex align-items-center px-2 py-1">
-                    <form method="post" action="{{ route('search') }}" >
-                        <input name="search" type="text" class="form-control bg-transparent border-0 text-white shadow-none"
+
+
+                        <input value="{{  $search ?? '' }}" name="search" type="text" class="form-control bg-transparent border-0 text-white shadow-none"
                                placeholder="Search Vacancies">
                         <button type="submit"
                                 class="btn border-0 outline-0 d-flex align-items-center justify-content-center"><i
                                 class="fa-solid fa-arrow-right text-secondary"></i></button>
-                    </form>
+
 
                 </div>
             </form>
             <div class="row">
                 <div class="career-list col-md-6 p-2 p-md-3 p-xl-4 border-1 border-end border-white-50">
-                    @foreach($careers as $i)
+                    @forelse($careers as $i)
                         <div class="mb-5">
                             <p class="text-white mb-1">{{$i->title}}</p>
                             <span class="text-white" style="font-size: 14px;">{{ $i->subtitle }} Limited | {{ $i->start }} -
@@ -68,8 +69,9 @@
                         </span>
                             <button data-id="{{ $i->id }}" data-title="{{ $i->title }}" data-start="{{ $i->start }}" data-end="{{ $i->end }}" data-desc="{{ $i->desc }}" type="button" style="font-size: 14px;" class="mt-1 text-white d-block btn btn-light btn-sm btn-m" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Show More ... </button>
                         </div>
-
-                    @endforeach
+                     @empty
+                     <p  class="text-white ">NO Careers Yet ...  </p>
+                    @endforelse
                 </div>
                 <div class="col-md-6"></div>
             </div>
@@ -134,6 +136,7 @@
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
+
         $(document).on("click", ".logout-tag", function(e) {
             e.preventDefault();
             swal({

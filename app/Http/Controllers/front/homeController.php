@@ -23,6 +23,8 @@ use http\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPUnit\Framework\isEmpty;
+
 class homeController extends Controller
 {
 
@@ -84,10 +86,19 @@ class homeController extends Controller
         return view('front.contact' , compact('contacts'));
     }
 
-    function career()
+    function career(Request $request)
     {
-        $careers = Career::all();
-        return view('front.career' , compact('careers'));
+
+        $search = $request->search ;
+        if($request->search == null){
+            $careers = Career::all();
+            }else{
+             $careers = Career::where('title', 'LIKE', '%'.$request->search.'%')
+             ->get();
+            }
+
+            
+        return view('front.career' , compact('careers' , 'search'));
 
     }
 
@@ -120,10 +131,4 @@ class homeController extends Controller
     }
 
 
-    function search(Request $request){
-
-        $careers =  Career::query()->where('title' , '%Like%' , $request->search)->get();
-
-        return view('front.career' , compact('careers'));
-    }
 }

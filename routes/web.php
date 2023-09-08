@@ -23,7 +23,7 @@ Route::get('/about', [\App\Http\Controllers\front\homeController::class , 'about
 Route::get('/solution/{id}', [\App\Http\Controllers\front\homeController::class , 'solution'])->name('solution');
 Route::get('/contact', [\App\Http\Controllers\front\homeController::class , 'contact'])->name('contact');
 Route::get('/career', [\App\Http\Controllers\front\homeController::class , 'career'])->name('career');
-Route::get('/search', [\App\Http\Controllers\front\homeController::class , 'search'])->name('search');
+Route::get('/search', [\App\Http\Controllers\front\homeController::class , 'career'])->name('search');
 
 Route::post('/post_contact', [\App\Http\Controllers\front\homeController::class , 'post_contact'])->name('post_contact');
 
