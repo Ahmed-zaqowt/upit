@@ -19,7 +19,7 @@ return new class extends Migration
             $table->enum('status' , ['admin' , 'user' ,  'editor' , 'future'])->default('user');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->foreignId('role_id')->nullable()->constrained('roles');
+            $table->foreignId('role_id')->nullable()->constrained('roles')->cascadeOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });

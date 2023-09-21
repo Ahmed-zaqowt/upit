@@ -38,7 +38,7 @@
 
     <div class="card">
         <div class="card-header py-3">
-            <h6 class="mb-0">ADD SOLUTION</h6>
+            <h6 class="mb-0">@lang("ADD SOLUTION")</h6>
         </div>
         <div class="card-body">
             <div class="row">
@@ -62,44 +62,44 @@
                             <form method="post" id="add_form" enctype="multipart/form-data" action="{{ route('admin.solution.store') }}" class="row g-3">
                                 @csrf
                             <div class="col-12">
-                                    <label class="form-label">Name</label>
+                                    <label class="form-label">@lang("Name")</label>
                                     <input name="name" type="text" class="form-control">
                                 </div>
                                 <div class="col-12">
-                                    <label  class="form-label">WHAT WE OFFER</label>
+                                    <label  class="form-label">@lang("WHAT WE OFFER")</label>
                                     <input name="text1"   class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label  class="form-label">COMPREHENSIVE INTEGRATION OF DATA CENTER DESIGN</label>
+                                    <label  class="form-label">@lang("COMPREHENSIVE INTEGRATION OF DATA CENTER DESIGN")</label>
                                     <input name="text2"   class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label  class="form-label">CUSTOMERS’ NEEDS
+                                    <label  class="form-label">@lang("CUSTOMERS’ NEEDS")
                                     </label>
                                     <input name="text3"   class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label  class="form-label">PRECISE CUSTOMIZATION
+                                    <label  class="form-label">@lang("PRECISE CUSTOMIZATION")
                                     </label>
                                     <input name="text4"  class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label  class="form-label">Sub Title
+                                    <label  class="form-label">@lang("Sub Title")
                                     </label>
                                     <input name="text5"  class="form-control"  type="text">
                                 </div>
                                 <div class="col-12">
-                                    <label  class="form-label">Desc
+                                    <label  class="form-label">@lang("Description")
                                     </label>
                                     <input name="text6"   class="form-control"  type="text">
                                 </div>
                                 <div>
-                                    <label  class="form-label">Large file input example</label>
+                                    <label  class="form-label">@lang("Image")</label>
                                     <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                                 </div>
                                 <div class="col-12">
                                     <div class="d-grid">
-                                        <button type="submit" class="btn btn-primary">Add Client</button>
+                                        <button type="submit" class="btn btn-primary">@lang("Add")</button>
                                     </div>
                                 </div>
                             </form>
@@ -120,7 +120,7 @@
                                     </form>
                                 </div>
                             @empty
-                              <p >There are no clients yet ... </p>
+                              <p >@lang("There are no items yet .. !!")</p>
                             @endforelse
                         </div>
                     </div>

@@ -4,6 +4,32 @@
 <head>
   Required meta tags
   <meta charset="utf-8">
+
+
+    @if(App::getLocale() == 'ar')
+        <link rel="icon" href="{{ asset('admin_assets_rtl/images/favicon-32x32.png') }}" type="image/png" />
+        <!--plugins-->
+        <link href="{{ asset('admin_assets_rtl/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin_assets_rtl/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin_assets_rtl/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+        <!-- Bootstrap CSS -->
+        <link href="{{ asset('admin_assets_rtl/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin_assets_rtl/css/bootstrap-extended.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin_assets_rtl/css/style.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin_assets_rtl/css/icons.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+        <!-- loader-->
+        <link href="{{ asset('admin_assets_rtl/css/pace.min.css') }}" rel="stylesheet" />
+
+        <!--Theme Styles-->
+        <link href="{{ asset('admin_assets_rtl/css/dark-theme.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin_assets_rtl/css/light-theme.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin_assets_rtl/css/semi-dark.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin_assets_rtl/css/header-colors.css') }}" rel="stylesheet" />
+    @else
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="{{asset('admin_assets/images/favicon-32x32.png')}} " type="image.png')}} " />
   <link href="{{asset('admin_assets/plugins/simplebar/css/simplebar.css')}} " rel="stylesheet" />
@@ -15,16 +41,19 @@
   <link href="{{asset('admin_assets/css/icons.css')}} " rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css"
-          href="{{ asset('dashboard/app-assets/vendors/css/extensions/toastr.min.css') }}">
-
 	<link href="{{asset('admin_assets/css/pace.min.css')}} " rel="stylesheet" />
-
   <link href="{{asset('admin_assets/css/dark-theme.css')}} " rel="stylesheet" />
   <link href="{{asset('admin_assets/css/light-theme.css')}} " rel="stylesheet" />
   <link href="{{asset('admin_assets/css/semi-dark.css')}} " rel="stylesheet" />
   <link href="{{asset('admin_assets/css/header-colors.css')}} " rel="stylesheet" />
+    @endif
+
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('dashboard/app-assets/vendors/css/extensions/toastr.min.css') }}">
    @yield('css')
+
+
+
   <title>Snacked - Bootstrap 5 Admin Template</title>
 </head>
 
@@ -180,22 +209,22 @@
   </div>
   <!--end wrapper-->
 
+      <script src="{{asset('admin_assets/js/bootstrap.bundle.min.js')}} "></script>
+
+      <script src="{{asset('admin_assets/js/jquery.min.js')}} "></script>
+      <script src="{{asset('admin_assets/plugins/simplebar/js/simplebar.min.js')}} "></script>
+      <script src="{{asset('admin_assets/plugins/metismenu/js/metisMenu.min.js')}} "></script>
+
+      <script src="{{asset('admin_assets/plugins/notifications/js/lobibox.min.js')}}"></script>
+      <script src="{{ asset('admin_assets/plugins/notifications/js/notifications.min.js') }}"></script>
+      <script src="{{asset('admin_assets/plugins/notifications/js/notification-custom-script.js')}}"></script>
+      <script src="{{asset('admin_assets/js/app.js')}} "></script>
+      <script src="{{asset('admin_assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+      <script src="{{ asset('admin_assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+      <script src="{{ asset('admin_assets/js/table-datatable.js') }}"></script>
 
 
- Bootstrap bundle JS
-  <script src="{{asset('admin_assets/js/bootstrap.bundle.min.js')}} "></script>
 
-  <script src="{{asset('admin_assets/js/jquery.min.js')}} "></script>
-  <script src="{{asset('admin_assets/plugins/simplebar/js/simplebar.min.js')}} "></script>
-  <script src="{{asset('admin_assets/plugins/metismenu/js/metisMenu.min.js')}} "></script>
-
-  <script src="{{asset('admin_assets/plugins/notifications/js/lobibox.min.js')}}"></script>
-  <script src="{{ asset('admin_assets/plugins/notifications/js/notifications.min.js') }}"></script>
-  <script src="{{asset('admin_assets/plugins/notifications/js/notification-custom-script.js')}}"></script>
-  <script src="{{asset('admin_assets/js/app.js')}} "></script>
-  <script src="{{asset('admin_assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
-  <script src="{{ asset('admin_assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
-  <script src="{{ asset('admin_assets/js/table-datatable.js') }}"></script>
   <script src="{{ asset('dashboard/app-assets/vendors/js/extensions/toastr.min.js') }}"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

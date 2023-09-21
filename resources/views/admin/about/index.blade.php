@@ -29,14 +29,14 @@
                      <div class="card border shadow-none w-100">
                          <div class="card-body">
 
-                             <h5>Section 1</h5>
+                             <h5>@lang("Section") 1</h5>
                              <hr>
                              <div class="col-12">
                                  <label class="form-label">About Us</label>
                                  <textarea  name="text1" class="form-control" placeholder="About Us">{{ $about->text1 ?? ''}}</textarea>
                              </div>
                              <div>
-                                 <label  class="form-label">Large file input example</label>
+                                 <label  class="form-label">Image</label>
                                  <input   name="image_sec_1" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                              </div>
                               <hr>
@@ -57,41 +57,41 @@
                  <div class="col-12 col-lg-4 d-flex">
                      <div class="card border shadow-none w-100">
                          <div class="card-body">
-                             <h5>Section 2</h5>
+                             <h5>@lang("Section") 2</h5>
                              <hr>
                              <div class="col-12">
-                                 <label  class="form-label">Title</label>
+                                 <label  class="form-label">@lang("Title")</label>
                                  <input value="{{ $about->text2 ?? '' }}" name="text2"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">Sub Title</label>
+                                 <label  class="form-label">@lang("Sub Title")</label>
                                  <input value="{{ $about->text3  ?? ''}}" name="text3"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">Descraption
+                                 <label  class="form-label">@lang("Description")
                                  </label>
                                  <textarea  name="text4"   class="form-control"  type="text">{{ $about->text4 ?? '' }}</textarea>
                              </div>
                              <div>
-                                 <label  class="form-label">Large file input example</label>
+                                 <label  class="form-label">Image</label>
                                  <input  name="image_sec_2" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                              </div>
                              <hr>
                              <div class="col-12">
-                                 <label  class="form-label">Title</label>
+                                 <label  class="form-label">@lang("Title")</label>
                                  <input value="{{ $about->text5 ?? '' }}" name="text5"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">Sub Title</label>
+                                 <label  class="form-label">@lang("Sub Title")</label>
                                  <input value="{{ $about->text6 ?? ''}}" name="text6"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">Descraption
+                                 <label  class="form-label">@lang("Description")
                                  </label>
                                  <textarea  name="text7"   class="form-control"  type="text">{{ $about->text7 ?? ''}}</textarea>
                              </div>
                              <div>
-                                 <label  class="form-label">Large file input example</label>
+                                 <label  class="form-label">Image</label>
                                  <input  name="image_sec_3" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                              </div>
                          </div>
@@ -100,39 +100,39 @@
                  <div class="col-12 col-lg-4 d-flex">
                      <div class="card border shadow-none w-100">
                          <div class="card-body">
-                             <h5>Section 3</h5>
+                             <h5>@lang("Section")3</h5>
                              <hr>
                              <div class="col-12">
-                                 <label  class="form-label">OUR VISION
+                                 <label  class="form-label">@lang("OUR VISION")
                                  </label>
                                  <textarea  name="text8"   class="form-control"  type="text">{{ $about->text8 ?? ''}}</textarea>
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">OUR MISSION
+                                 <label  class="form-label">@lang("OUR MISSION")
                                  </label>
                                  <textarea  name="text9"   class="form-control"  type="text">{{ $about->text9 ?? ''}}</textarea>
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">WHY CHOOSE SETRA
+                                 <label  class="form-label">@lang("WHY CHOOSE SETRA")
                                  </label>
                                  <textarea  name="text10"   class="form-control"  type="text">{{ $about->text10 ?? ''}}</textarea>
                              </div>
 
                              <hr>
                              <div class="col-12">
-                                 <label  class="form-label">first advantage</label>
+                                 <label  class="form-label">@lang("first advantage")</label>
                                  <input value="{{ $about->text11 ?? ''}}" name="text11"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">second advantage</label>
+                                 <label  class="form-label">@lang("second advantage")</label>
                                  <input value="{{ $about->text12 ?? '' }}" name="text12"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">third feature</label>
+                                 <label  class="form-label">@lang("third feature")</label>
                                  <input value="{{ $about->text13 ?? ''}}" name="text13"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label class="form-label">fourth feature</label>
+                                 <label class="form-label">@lang("fourth feature")</label>
                                  <input value="{{ $about->text14 ?? '' }}" name="text14"   class="form-control"  type="text">
                              </div>
                          </div>
@@ -149,18 +149,18 @@
                  <div class="col-12 col-lg-14 d-flex">
                      <div class="card border shadow-none w-100">
                          <div class="card-body">
-                             <h5>Section 4</h5>
+                             <h5>@lang("Section")4</h5>
                              <hr>
                              <div class="col-12">
-                                 <label  class="form-label">Title</label>
+                                 <label  class="form-label">@lang("Title")</label>
                                  <input value="{{ $about->text15 ?? ''}}" name="text15"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">Sub Title</label>
+                                 <label  class="form-label">@lang("Sub Title")</label>
                                  <input value="{{ $about->text16 ?? ''}}" name="text16"   class="form-control"  type="text">
                              </div>
                              <div class="col-12">
-                                 <label  class="form-label">Descraption
+                                 <label  class="form-label">@lang("Description")
                                  </label>
                                  <textarea  name="text17"   class="form-control"  type="text">{{ $about->text17 ?? ''}}</textarea>
                              </div>
@@ -172,7 +172,7 @@
      </div>
 
                               <div class="d-grid">
-                                  <button type="submit" class="btn btn-primary">Add Client</button>
+                                  <button type="submit" class="btn btn-primary">@lang("Add")</button>
                               </div>
                           </div>
 

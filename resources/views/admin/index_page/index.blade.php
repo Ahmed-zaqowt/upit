@@ -45,7 +45,7 @@
     @endif
 
         <div class="col-xl-12 mx-auto">
-            <h6 class="mb-0 text-uppercase">Fancy File Upload</h6>
+            <h6 class="mb-0 text-uppercase">@lang("Images Section one")</h6>
             <hr/>
             <div class="card">
                 <div class="card-body">
@@ -57,12 +57,11 @@
                     <form enctype="multipart/form-data" action="{{ route('admin.home.index_album') }}"  method="post">
                         @csrf
                         <div>
-                            <label  class="form-label">Large file input example</label>
                             <input type="hidden" name="location" value="index.slider">
                             <input  name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
                          <button  class="btn w-100 mt-3 " style="background-color: #8E0909" type="submit"><span style="color: white">
-                                 Submit
+                                @lang('Submit')
                              </span></button>
                     </form>
                 </div>
@@ -78,10 +77,10 @@
                                             @csrf
                                             @method('delete')
                                             <button onclick="return confirm('Are you sure?!')"
-                                                    class="btn btn-danger ">delete</button>
+                                                    class="btn btn-danger ">@lang("delete")</button>
                                         </form>
                                         <button type="button" data-id="{{ $img->id }}" class="btn btn-info edit_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            update
+                                            @lang("update")
                                         </button>
 
                                     </div>
@@ -90,7 +89,7 @@
 
                         @empty
                             <div class="alert border-0 bg-light-danger alert-dismissible fade show">
-                                <div class="text-danger">There are no items yet .. !!</div>
+                                <div class="text-danger">@lang("There are no items yet .. !!")</div>
                             </div>
                         @endforelse
 
@@ -108,7 +107,7 @@
 
 
         <div class="col-xl-12 mx-auto">
-            <h6 class="mb-0 text-uppercase">Fancy File Upload</h6>
+            <h6 class="mb-0 text-uppercase">@lang("Images Section Two")</h6>
             <hr/>
             <div class="card">
                 <div class="card-body">
@@ -122,11 +121,10 @@
                         @csrf
                         <div>
                             <input type="hidden" name="location" value="index.image.card">
-                            <label  class="form-label">Large file input example</label>
                             <input required name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                         </div>
                         <button  class="btn w-100 mt-3 " style="background-color: #8E0909" type="submit"><span style="color: white">
-                                 Submit
+                                 @lang('Submit')
                              </span></button>
                     </form>
                 </div>
@@ -143,10 +141,10 @@
                                         @csrf
                                         @method('delete')
                                         <button onclick="return confirm('Are you sure?!')"
-                                                class="btn btn-danger ">delete</button>
+                                                class="btn btn-danger ">@lang("delete")</button>
                                     </form>
                                     <button type="button" data-id="{{ $img->id }}" class="btn btn-info edit_btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        update
+                                        @lang("update")
                                     </button>
 
                                 </div>
@@ -155,7 +153,7 @@
 
                     @empty
                         <div class="alert border-0 bg-light-danger alert-dismissible fade show">
-                            <div class="text-danger">There are no items yet .. !!</div>
+                            <div class="text-danger">@lang("There are no items yet .. !!")</div>
                         </div>
                     @endforelse
 
@@ -190,22 +188,21 @@
                                 <div class="card border shadow-none w-100">
                                     <div class="card-body">
 
-                                        <h5>Section 1</h5>
+                                        <h5>@lang("Section") 1</h5>
                                         <hr>
                                         <div class="col-12">
-                                            <label class="form-label">Sub Title</label>
+                                            <label class="form-label">@lang("Sub Title")</label>
                                             <input  value="{{ $about->text1 ?? ''}}"  name="text1" class="form-control" >
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label">Title</label>
+                                            <label class="form-label">@lang("Title")</label>
                                             <input  value="{{ $about->text2 ?? ''}}" name="text2" class="form-control" >
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label">Sub Title</label>
+                                            <label class="form-label">@lang("Sub Title")</label>
                                             <input value="{{ $about->text3 ?? ''}}"  name="text3" class="form-control" >
                                         </div>
                                         <div>
-                                            <label  class="form-label">Large file input example</label>
                                             <input   name="image" accept=".jpg, .png, image/jpeg, image/png" multiple class="form-control form-control-lg" id="formFileLg" type="file">
                                         </div>
                                         <hr>
@@ -221,31 +218,31 @@
                             <div class="col-12 col-lg-4 d-flex">
                                 <div class="card border shadow-none w-100">
                                     <div class="card-body">
-                                        <h5>Section 2</h5>
+                                        <h5>@lang("Section") 2</h5>
                                         <hr>
                                         <div class="col-12">
-                                            <label  class="form-label">Title</label>
+                                            <label  class="form-label">@lang("Title")</label>
                                             <input value="{{ $about->text4 ?? '' }}" name="text4"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Sub Title</label>
+                                            <label  class="form-label">@lang("Sub Title")</label>
                                             <input value="{{ $about->text5  ?? ''}}" name="text5"   class="form-control"  type="text">
                                         </div>
                                         <hr>
                                         <div class="col-12">
-                                            <label  class="form-label">Item</label>
+                                            <label  class="form-label">@lang("Item")</label>
                                             <input value="{{ $about->text6 ?? '' }}" name="text6"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Item</label>
+                                            <label  class="form-label">@lang("Item")</label>
                                             <input value="{{ $about->text7 ?? ''}}" name="text7"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Item</label>
+                                            <label  class="form-label">@lang("Item")</label>
                                             <input value="{{ $about->text8 ?? '' }}" name="text8"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Item</label>
+                                            <label  class="form-label">@lang("Item")</label>
                                             <input value="{{ $about->text9 ?? ''}}" name="text9"   class="form-control"  type="text">
                                         </div>
 
@@ -255,31 +252,31 @@
                             <div class="col-12 col-lg-4 d-flex">
                                 <div class="card border shadow-none w-100">
                                     <div class="card-body">
-                                        <h5>Section 3</h5>
+                                        <h5>@lang("Section") 3</h5>
                                      <hr>
                                         <div class="col-12">
-                                            <label  class="form-label">Title</label>
+                                            <label  class="form-label">@lang("Title")</label>
                                             <input value="{{ $about->text10?? '' }}" name="text10"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Sub Title</label>
+                                            <label  class="form-label">@lang("Sub Title")</label>
                                             <input value="{{ $about->text11  ?? ''}}" name="text11"   class="form-control"  type="text">
                                         </div>
                                         <hr>
                                         <div class="col-12">
-                                            <label class="form-label">Item</label>
+                                            <label class="form-label">@lang("Item")</label>
                                             <input value="{{ $about->text12 ?? '' }}" name="text12"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Item</label>
+                                            <label  class="form-label">@lang("Item")</label>
                                             <input value="{{ $about->text13 ?? ''}}" name="text13"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Item</label>
+                                            <label  class="form-label">@lang("Item")</label>
                                             <input value="{{ $about->text14 ?? '' }}" name="text14"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Item</label>
+                                            <label  class="form-label">@lang("Item")</label>
                                             <input value="{{ $about->text15 ?? ''}}" name="text15"   class="form-control"  type="text">
                                         </div>
 
@@ -297,39 +294,39 @@
                                 <div class="card border shadow-none w-100">
                                     <div class="card-body">
 
-                                        <h5>Section 4</h5>
+                                        <h5>@lang("Section") 4</h5>
                                         <hr>
                                         <div class="col-12">
-                                            <label class="form-label">OUR PARTNERS</label>
+                                            <label class="form-label">@lang("OUR PARTNERS")</label>
                                             <input  value="{{ $about->text16 ?? ''}}"  name="text16" class="form-control" >
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label">OUR CLIENTS</label>
+                                            <label class="form-label">@lang("OUR CLIENTS")</label>
                                             <input  value="{{ $about->text17 ?? ''}}" name="text17" class="form-control" >
                                         </div>
                                         <hr>
                                         <div class="col-12">
-                                            <label class="form-label">Title</label>
+                                            <label class="form-label">@lang("Title")</label>
                                             <input value="{{ $about->text18 ?? ''}}"  name="text18" class="form-control" >
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label">Sub Title</label>
+                                            <label class="form-label">@lang("Sub Title")</label>
                                             <input  value="{{ $about->text19 ?? ''}}"  name="text19" class="form-control" >
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label">Title</label>
+                                            <label class="form-label">@lang("Title")</label>
                                             <input  value="{{ $about->text20 ?? ''}}" name="text20" class="form-control" >
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label">Sub Title</label>
+                                            <label class="form-label">@lang("Sub Title")</label>
                                             <input value="{{ $about->text21 ?? ''}}"  name="text21" class="form-control" >
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label">Title</label>
+                                            <label class="form-label">@lang("Title")</label>
                                             <input  value="{{ $about->text22 ?? ''}}"  name="text22" class="form-control" >
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label">Sub Title</label>
+                                            <label class="form-label">@lang("Sub Title")</label>
                                             <input  value="{{ $about->text23 ?? ''}}" name="text23" class="form-control" >
                                         </div>
 
@@ -340,27 +337,27 @@
                             <div class="col-12 col-lg-4 d-flex">
                                 <div class="card border shadow-none w-100">
                                     <div class="card-body">
-                                        <h5>Section 5</h5>
+                                        <h5>@lang("Section") 5</h5>
                                         <hr>
                                         <div class="col-12">
-                                            <label  class="form-label">Title</label>
+                                            <label  class="form-label">@lang("Title")</label>
                                             <input value="{{ $about->text24 ?? '' }}" name="text24"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Sub Title</label>
+                                            <label  class="form-label">@lang("Sub Title")</label>
                                             <input value="{{ $about->text25  ?? ''}}" name="text25"   class="form-control"  type="text">
                                         </div>
                                         <hr>
                                         <div class="col-12">
-                                            <label  class="form-label">Description</label>
+                                            <label  class="form-label">@lang("Description")</label>
                                             <textarea  name="text26" class="form-control"  type="text">{{ $about->text26 ?? '' }}</textarea>
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Title</label>
+                                            <label  class="form-label">@lang("Title")</label>
                                             <input value="{{ $about->text27 ?? ''}}" name="text27"   class="form-control"  type="text">
                                         </div>
                                         <div class="col-12">
-                                            <label  class="form-label">Sub Title</label>
+                                            <label  class="form-label">@lang("Sub Title")</label>
                                             <input value="{{ $about->text28 ?? '' }}" name="text28"   class="form-control"  type="text">
                                         </div>
 
@@ -372,7 +369,7 @@
                     </div>
                 </div>
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Add Client</button>
+                    <button type="submit" class="btn btn-primary">@lang("Add")</button>
                 </div>
 
 

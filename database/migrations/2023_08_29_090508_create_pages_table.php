@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('solution_id')->constrained('solutions');
+            $table->foreignId('solution_id')->constrained('solutions')->cascadeOnDelete();
             $table->text('text1')->nullable();
             $table->text('text2')->nullable();
             $table->text('text3')->nullable();
